@@ -1,0 +1,141 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MFCcontrol.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ADacquireTime_ms" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="timerUI_ms" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="MFCcontrol_numMFCs" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="MfcAinChannelsList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Dev1/ai0,Dev1/ai1,Dev1/ai2,Dev1/ai3,Dev1/ai4,Dev1/ai5,Dev1/ai6,Dev1/ai7</Value>
+    </Setting>
+    <Setting Name="ADoutRefreshTime_ms" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="GraphTimeUpdateMS" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="PicoammeterControlEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="mfcMainControlEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="sensorVdsDaqAO" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.1</Value>
+    </Setting>
+    <Setting Name="sensorVgsDaqAO" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="sensorBiasEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="sensorVdsDaqLock" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="sensorVgsDaqLock" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="sensorBiasMaxRange" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="PicoammRange" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="PicoammRefreshRead" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PicoammNPLC" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="SamplesToGraphRst" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="MfcControlEnableList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">True,True,True,True,True,True,True,True</Value>
+    </Setting>
+    <Setting Name="MfcGasNamesList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1,2,3,4,5,6,7,8</Value>
+    </Setting>
+    <Setting Name="MfcMaxRangeList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1000,100,100,100,1000,100,100,100</Value>
+    </Setting>
+    <Setting Name="MfcPlotEnableList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">True,True,True,True,True,True,True,True</Value>
+    </Setting>
+    <Setting Name="MfcAoutChannelsList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Dev1/ao0,Dev1/ao1,Dev1/ao0,Dev1/ao1,Dev1/ao0,Dev1/ao1,Dev1/ao0,Dev1/ao1</Value>
+    </Setting>
+    <Setting Name="sensorVdsDaqAOchan" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Dev1/ao0</Value>
+    </Setting>
+    <Setting Name="sensorVgsDaqAOchan" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Dev1/ao1</Value>
+    </Setting>
+    <Setting Name="sensorBiasMinRange" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="PxiResourceName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PXI1Slot2</Value>
+    </Setting>
+    <Setting Name="SwitchTopologyName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2535/1-Wire 4x136 Matrix</Value>
+    </Setting>
+    <Setting Name="SwitchMatrixEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SwitchRefreshMs" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="SwitchRefreshEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SwitchMatrixRowsNum" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="SwitchMatrixColsNum" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">136</Value>
+    </Setting>
+    <Setting Name="SweepMatrixDuringRecipe" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DigitalOutputEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DigitalOutputNumLines" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="DigitalOutputLineNames" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Dev1/port0/line0,Dev1/port0/line1,Dev1/port0/line2,Dev1/port0/line3,Dev1/port0/line4,Dev1/port0/line5,Dev1/port0/line6,Dev1/port0/line7</Value>
+    </Setting>
+    <Setting Name="DigitalOutRefreshTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="DigitalOutRefreshEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="GateSweepEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="GateSettleTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="GateLow" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="GateHi" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="GateStep" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.001</Value>
+    </Setting>
+    <Setting Name="PointsToPlot" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

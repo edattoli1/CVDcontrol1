@@ -1,0 +1,65 @@
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\bin\Release\SensorControl.exe.config
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\bin\Release\SensorControl.exe.manifest
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\bin\Release\SensorControl.application
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\bin\Release\SensorControl.exe
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\bin\Release\SensorControl.pdb
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\bin\Release\NationalInstruments.DAQmx.dll
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\bin\Release\NationalInstruments.Common.Native.dll
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\bin\Release\NationalInstruments.DAQmx.xml
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.ConfigureSwitchMatrix.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.ConfigBiasOutForm.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.ConfigureMFCs.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.Form1.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.Ke648xGUI.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.ScanDeviceCurrentsForm.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.SwitchStateForm.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.ScanListView.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.SwitchMatrixControl.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.GraphMfcs.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.MFCcontrolTemplate.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.MfcRecipeControl.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.Properties.Resources.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.RecipeView.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.SensorBiasControl.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.ViewPresentCurrentsForm.resources
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.csproj.GenerateResource.Cache
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\SensorControl.exe.manifest
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\SensorControl.application
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\SensorControl.exe
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\SensorControl.pdb
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.csprojResolveAssemblyReference.cache
+C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Release\MFCcontrol.DigitalOutputControl.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Release\SensorControl.exe.config
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\SensorControl.exe
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\SensorControl.pdb
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Release\SensorControl.exe.manifest
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Release\SensorControl.application
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Release\SensorControl.exe
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Release\SensorControl.pdb
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Release\NationalInstruments.DAQmx.dll
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Release\NationalInstruments.Common.Native.dll
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Release\NationalInstruments.DAQmx.xml
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.csprojResolveAssemblyReference.cache
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.DigitalOutLineStatesForm.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.ConfigureDigitalOut.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.ConfigureSwitchMatrix.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.ConfigBiasOutForm.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.ConfigureMFCs.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.Form1.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.Ke648xGUI.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.ScanDeviceCurrentsForm.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.SwitchStateForm.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.ScanListView.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.DigitalOutputControl.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.UserControls.GateSweepControl.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.SwitchMatrixControl.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.GraphMfcs.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.MFCcontrolTemplate.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.MfcRecipeControl.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.Properties.Resources.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.RecipeView.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.SensorBiasControl.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.ViewPresentCurrentsForm.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\MFCcontrol.csproj.GenerateResource.Cache
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\SensorControl.exe.manifest
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Release\SensorControl.application

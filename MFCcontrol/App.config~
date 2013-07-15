@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="MFCcontrol.Settings1" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+            <section name="GraphAsync1.Settings1" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+    </startup>
+    <userSettings>
+        <MFCcontrol.Settings1>
+            <setting name="ADacquireTime_ms" serializeAs="String">
+                <value>500</value>
+            </setting>
+            <setting name="timerUI_ms" serializeAs="String">
+                <value>200</value>
+            </setting>
+            <setting name="MFCcontrol_numMFCs" serializeAs="String">
+                <value>4</value>
+            </setting>
+            <setting name="DAQ_CreateVoltageChannel_AI_chans" serializeAs="String">
+                <value>Dev1/ai0,Dev1/ai1,Dev1/ai2,Dev1/ai3</value>
+            </setting>
+            <setting name="ADoutRefreshTime_ms" serializeAs="String">
+                <value>200</value>
+            </setting>
+            <setting name="MFC1enable" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="MFC2enable" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="MFC1maxRange" serializeAs="String">
+                <value>1000</value>
+            </setting>
+            <setting name="MFC2maxRange" serializeAs="String">
+                <value>100</value>
+            </setting>
+            <setting name="MFC1Gas" serializeAs="String">
+                <value>Air</value>
+            </setting>
+            <setting name="MFC2Gas" serializeAs="String">
+                <value>Analyte1</value>
+            </setting>
+            <setting name="MFC1PlotEnable" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="MFC2PlotEnable" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="GraphTimeUpdateMS" serializeAs="String">
+                <value>500</value>
+            </setting>
+            <setting name="SamplesToGraphReset" serializeAs="String">
+                <value>2000</value>
+            </setting>
+            <setting name="MFC3Gas" serializeAs="String">
+                <value>Analyte2</value>
+            </setting>
+            <setting name="MFC4Gas" serializeAs="String">
+                <value>Analyte3</value>
+            </setting>
+            <setting name="MFC3PlotEnable" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="MFC4PlotEnable" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="MFC3maxRange" serializeAs="String">
+                <value>100</value>
+            </setting>
+            <setting name="MFC4maxRange" serializeAs="String">
+                <value>100</value>
+            </setting>
+            <setting name="MFC3enable" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="MFC4enable" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="PicoammeterControlEnable" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="mfcMainControlEnable" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="sensorVdsDaqAO" serializeAs="String">
+                <value>Dev2/ao0</value>
+            </setting>
+            <setting name="sensorVgsDaqAO" serializeAs="String">
+                <value>Dev2/ao1</value>
+            </setting>
+            <setting name="sensorBiasEnable" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="sensorVdsDaqLock" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="sensorVgsDaqLock" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="sensorBiasMaxRange" serializeAs="String">
+                <value>10</value>
+            </setting>
+            <setting name="PicoammRange" serializeAs="String">
+                <value>6</value>
+            </setting>
+            <setting name="PicoammRefreshRead" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="PicoammNPLC" serializeAs="String">
+                <value>0</value>
+            </setting>
+        </MFCcontrol.Settings1>
+        <GraphAsync1.Settings1>
+            <setting name="ADacquireTime_ms" serializeAs="String">
+                <value>500</value>
+            </setting>
+            <setting name="timerUI_ms" serializeAs="String">
+                <value>200</value>
+            </setting>
+            <setting name="MFCcontrol_numMFCs" serializeAs="String">
+                <value>4</value>
+            </setting>
+            <setting name="DAQ_CreateVoltageChannel_AI_chans" serializeAs="String">
+                <value>Dev1/ai0,Dev1/ai1,Dev1/ai2,Dev1/ai3</value>
+            </setting>
+            <setting name="ADoutRefreshTime_ms" serializeAs="String">
+                <value>200</value>
+            </setting>
+            <setting name="MFC1enable" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="MFC2enable" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="MFC1maxRange" serializeAs="String">
+                <value>1000</value>
+            </setting>
+            <setting name="MFC2maxRange" serializeAs="String">
+                <value>100</value>
+            </setting>
+            <setting name="MFC1Gas" serializeAs="String">
+                <value>Air</value>
+            </setting>
+            <setting name="MFC2Gas" serializeAs="String">
+                <value>Analyte1</value>
+            </setting>
+            <setting name="MFC1PlotEnable" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="MFC2PlotEnable" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="GraphTimeUpdateMS" serializeAs="String">
+                <value>500</value>
+            </setting>
+            <setting name="SamplesToGraphReset" serializeAs="String">
+                <value>2000</value>
+            </setting>
+            <setting name="MFC3Gas" serializeAs="String">
+                <value>Analyte2</value>
+            </setting>
+            <setting name="MFC4Gas" serializeAs="String">
+                <value>Analyte3</value>
+            </setting>
+            <setting name="MFC3PlotEnable" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="MFC4PlotEnable" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="MFC3maxRange" serializeAs="String">
+                <value>100</value>
+            </setting>
+            <setting name="MFC4maxRange" serializeAs="String">
+                <value>100</value>
+            </setting>
+            <setting name="MFC3enable" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="MFC4enable" serializeAs="String">
+                <value>False</value>
+            </setting>
+        </GraphAsync1.Settings1>
+    </userSettings>
+</configuration>

@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94F8A864-3588-4EC2-ADFE-5BF9B301A04C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MFCcontrol</RootNamespace>
+    <AssemblyName>SensorControl</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>C:\Users\pat\Desktop\apps_pub\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>822D93714E06AF21F00AFE7464444C424379C4DC</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GraphAsync1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Ivi.Driver, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL" />
+    <Reference Include="Ivi.Swtch, Version=1.0.1.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.Common, Version=13.0.40.188, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.DAQmx, Version=9.6.45.292, Culture=neutral, PublicKeyToken=4febd62461bf11a4, processorArchitecture=x86" />
+    <Reference Include="NationalInstruments.ModularInstruments.ModularInstrumentsSystem, Version=1.3.40.3, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.ModularInstruments.NISwitch.Fx40, Version=1.0.40.50, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.NI4882, Version=13.0.45.159, Culture=neutral, PublicKeyToken=4febd62461bf11a4, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\DigitalOutLineStatesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DigitalOutLineStatesForm.Designer.cs">
+      <DependentUpon>DigitalOutLineStatesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConfigureDigitalOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigureDigitalOut.Designer.cs">
+      <DependentUpon>ConfigureDigitalOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConfigureSwitchMatrix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigureSwitchMatrix.Designer.cs">
+      <DependentUpon>ConfigureSwitchMatrix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConfigBiasOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigBiasOutForm.Designer.cs">
+      <DependentUpon>ConfigBiasOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConfigureMFCs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigureMFCs.Designer.cs">
+      <DependentUpon>ConfigureMFCs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ke648xGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ke648xGUI.Designer.cs">
+      <DependentUpon>Ke648xGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ScanDeviceCurrentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScanDeviceCurrentsForm.Designer.cs">
+      <DependentUpon>ScanDeviceCurrentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FurnaceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FurnaceControl.Designer.cs">
+      <DependentUpon>FurnaceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClasses\DaqAction.cs" />
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClasses\GenStopwatch.cs" />
+    <Compile Include="HelperClasses\GenTimer.cs" />
+    <Compile Include="HelperClasses\K617Control.cs" />
+    <Compile Include="HelperClasses\Ke648xControl.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Forms\SwitchStateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SwitchStateForm.Designer.cs">
+      <DependentUpon>SwitchStateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ScanListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScanListView.Designer.cs">
+      <DependentUpon>ScanListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClasses\SwitchOperations.cs" />
+    <Compile Include="UserControls\DigitalOutputControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DigitalOutputControl.Designer.cs">
+      <DependentUpon>DigitalOutputControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GateSweepControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\GateSweepControl.Designer.cs">
+      <DependentUpon>GateSweepControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SwitchMatrixControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SwitchMatrixControl.Designer.cs">
+      <DependentUpon>SwitchMatrixControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GraphMfcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\GraphMfcs.Designer.cs">
+      <DependentUpon>GraphMfcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClasses\HiResTimer.cs" />
+    <Compile Include="UserControls\MFCcontrolTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MFCcontrolTemplate.Designer.cs">
+      <DependentUpon>MFCcontrolTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MFCRecipeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MFCRecipeControl.Designer.cs">
+      <DependentUpon>MFCRecipeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\RecipeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RecipeView.Designer.cs">
+      <DependentUpon>RecipeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SensorBiasControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SensorBiasControl.Designer.cs">
+      <DependentUpon>SensorBiasControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClasses\SShtLoad.cs" />
+    <Compile Include="HelperClasses\Util.cs" />
+    <Compile Include="Forms\ViewPresentCurrentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewPresentCurrentsForm.Designer.cs">
+      <DependentUpon>ViewPresentCurrentsForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\DigitalOutLineStatesForm.resx">
+      <DependentUpon>DigitalOutLineStatesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigureDigitalOut.resx">
+      <DependentUpon>ConfigureDigitalOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigureSwitchMatrix.resx">
+      <DependentUpon>ConfigureSwitchMatrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigBiasOutForm.resx">
+      <DependentUpon>ConfigBiasOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigureMFCs.resx">
+      <DependentUpon>ConfigureMFCs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ke648xGUI.resx">
+      <DependentUpon>Ke648xGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScanDeviceCurrentsForm.resx">
+      <DependentUpon>ScanDeviceCurrentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SwitchStateForm.resx">
+      <DependentUpon>SwitchStateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScanListView.resx">
+      <DependentUpon>ScanListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FurnaceControl.resx">
+      <DependentUpon>FurnaceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DigitalOutputControl.resx">
+      <DependentUpon>DigitalOutputControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\GateSweepControl.resx">
+      <DependentUpon>GateSweepControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SwitchMatrixControl.resx">
+      <DependentUpon>SwitchMatrixControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\GraphMfcs.resx">
+      <DependentUpon>GraphMfcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MFCcontrolTemplate.resx">
+      <DependentUpon>MFCcontrolTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MFCRecipeControl.resx">
+      <DependentUpon>MFCRecipeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\RecipeView.resx">
+      <DependentUpon>RecipeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SensorBiasControl.resx">
+      <DependentUpon>SensorBiasControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewPresentCurrentsForm.resx">
+      <DependentUpon>ViewPresentCurrentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
