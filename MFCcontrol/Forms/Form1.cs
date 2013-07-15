@@ -224,6 +224,9 @@ namespace MFCcontrol
                 //    mfcControlArray[i].EnableUserControl();
             }
 
+            if (Properties.Settings.Default.FurnaceControlEnable)
+                timerFurnaceTemp.StartTimer();
+
            sensorBiasControl1.SensorBiasControlInit();
 
         }

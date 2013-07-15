@@ -36,6 +36,7 @@
             this.offButton = new System.Windows.Forms.Button();
             this.onButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.furnaceControlCheckBox = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.setTempUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +44,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.furnaceControlCheckBox);
             this.panel3.Controls.Add(this.presTempBox);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
@@ -120,11 +122,22 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 8);
+            this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 18);
             this.label1.TabIndex = 13;
             this.label1.Text = "FURNACE CONTROL";
+            // 
+            // furnaceControlCheckBox
+            // 
+            this.furnaceControlCheckBox.AutoSize = true;
+            this.furnaceControlCheckBox.Location = new System.Drawing.Point(181, 8);
+            this.furnaceControlCheckBox.Name = "furnaceControlCheckBox";
+            this.furnaceControlCheckBox.Size = new System.Drawing.Size(123, 21);
+            this.furnaceControlCheckBox.TabIndex = 44;
+            this.furnaceControlCheckBox.Text = "Enable Control";
+            this.furnaceControlCheckBox.UseVisualStyleBackColor = true;
+            this.furnaceControlCheckBox.CheckedChanged += new System.EventHandler(this.furnaceControlCheckBox_CheckedChanged);
             // 
             // FurnaceControl
             // 
@@ -151,5 +164,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         internal System.Windows.Forms.TextBox presTempBox;
+        private System.Windows.Forms.CheckBox furnaceControlCheckBox;
     }
 }

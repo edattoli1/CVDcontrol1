@@ -575,5 +575,17 @@ namespace MFCcontrol.Properties {
                 this["FurnaceTempUpdateTimeMs"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FurnaceControlEnable {
+            get {
+                return ((bool)(this["FurnaceControlEnable"]));
+            }
+            set {
+                this["FurnaceControlEnable"] = value;
+            }
+        }
     }
 }

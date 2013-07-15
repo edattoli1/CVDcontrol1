@@ -28,21 +28,8 @@ namespace MFCcontrol
 
         private void FurnaceControl_Load(object sender, EventArgs e)
         {
-            try
-            {
-                port = new SerialPort("COM1", 9600, Parity.Even, 8, StopBits.One);
-                port.Open();
-            }
-            catch
-            {
-                string messageBoxText = "Do you want to exit?";
-                string caption = "COM1 Problem";
-                var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    Environment.Exit(0);
-                }
-            }
+            if (Properties.Settings.Default.FurnaceControlEnable == true)
+                furnaceControlCheckBox.Checked = true;
         }
 
         private void offButton_Click(object sender, EventArgs e)
@@ -69,6 +56,10 @@ namespace MFCcontrol
 
         internal void UpdatePresTemperature()
         {
+            // don't check temperature if furnace control is turned off
+            if (furnaceControlCheckBox.Checked == false)
+                return;
+            
             if (InvokeRequired)
             {
                 //BeginInvoke(new UpdateADgraphDelegate(UpdateADgraph));
@@ -83,6 +74,43 @@ namespace MFCcontrol
             inTemp = port.ReadLine();
             presTempBox.Text = inTemp;
 
+        }
+
+        private void furnaceControlCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (furnaceControlCheckBox.Checked == true)
+            {
+                try
+                {
+                    port = new SerialPort("COM1", 9600, Parity.Even, 8, StopBits.One);
+                    port.Open();
+                }
+                catch
+                {
+                    string messageBoxText = "Do you want to exit?";
+                    string caption = "COM1 Problem";
+                    var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        Environment.Exit(0);
+                    }
+                }
+                onButton.Enabled = true;
+                offButton.Enabled = true;
+                setTempUpDown1.Enabled = true;
+
+                Properties.Settings.Default.FurnaceControlEnable = true;
+            }
+            else
+            {
+                port.Close();
+                onButton.Enabled = false;
+                offButton.Enabled = false;
+                setTempUpDown1.Enabled = false;
+
+                Properties.Settings.Default.FurnaceControlEnable = false;
+
+            }
         }
 
     }
