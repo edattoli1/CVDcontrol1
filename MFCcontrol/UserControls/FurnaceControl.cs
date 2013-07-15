@@ -69,6 +69,14 @@ namespace MFCcontrol
 
         internal void UpdatePresTemperature()
         {
+            if (InvokeRequired)
+            {
+                //BeginInvoke(new UpdateADgraphDelegate(UpdateADgraph));
+                BeginInvoke((Action)UpdatePresTemperature);
+                return;
+            }
+            
+            
             //\x0201010WRDD002,01\03 
             string inTemp;
             port.Write((char)2 + "01010WRDD0002,01" + (char)3 + '\r');

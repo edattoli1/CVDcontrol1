@@ -374,11 +374,11 @@ namespace MFCcontrol
         {
             UpdateFurnaceTempBusy = true;
 
-            if (InvokeRequired)
-            {
-                BeginInvoke((Action)UpdateFurnaceTemp);
-                return;
-            }
+            //if (InvokeRequired)
+            //{
+            //    BeginInvoke((Action)UpdateFurnaceTemp);
+            //    return;
+            //}
 
             furnaceControl1.UpdatePresTemperature();
 
