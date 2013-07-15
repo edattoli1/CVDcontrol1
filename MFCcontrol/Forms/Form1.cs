@@ -94,7 +94,8 @@ namespace MFCcontrol
             switchMatrixControl1.parentForm = this;
 
             gateSweepControl1.parentForm = this;
-            
+
+            furnaceControl1.parentForm = this;
 
             // Init Picoammeter
             PicoammControl = new Ke648xControl();
@@ -377,13 +378,15 @@ namespace MFCcontrol
         {
             UpdateFurnaceTempBusy = true;
 
-            //if (InvokeRequired)
-            //{
-            //    BeginInvoke((Action)UpdateFurnaceTemp);
-            //    return;
-            //}
+            if (InvokeRequired)
+            {
+                BeginInvoke((Action)UpdateFurnaceTemp);
+                return;
+            }
 
-            furnaceControl1.UpdatePresTemperature();
+            string presentTemp = furnaceControl1.UpdatePresTemperature();
+
+            furnaceControl1.presTempBox.Text = presentTemp;
 
 
             UpdateFurnaceTempBusy = false;

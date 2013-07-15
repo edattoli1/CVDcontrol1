@@ -14,6 +14,7 @@ namespace MFCcontrol
     public partial class FurnaceControl : UserControl
     {
         internal SerialPort port;
+        internal Form1 parentForm;
         
         public FurnaceControl()
         {
@@ -54,25 +55,16 @@ namespace MFCcontrol
 
         }
 
-        internal void UpdatePresTemperature()
+        internal string UpdatePresTemperature()
         {
             // don't check temperature if furnace control is turned off
-            if (furnaceControlCheckBox.Checked == false)
-                return;
-            
-            if (InvokeRequired)
-            {
-                //BeginInvoke(new UpdateADgraphDelegate(UpdateADgraph));
-                BeginInvoke((Action)UpdatePresTemperature);
-                return;
-            }
-            
+
             
             //\x0201010WRDD002,01\03 
             string inTemp;
             port.Write((char)2 + "01010WRDD0002,01" + (char)3 + '\r');
             inTemp = port.ReadLine();
-            presTempBox.Text = inTemp;
+            return inTemp;
 
         }
 
@@ -98,15 +90,18 @@ namespace MFCcontrol
                 onButton.Enabled = true;
                 offButton.Enabled = true;
                 setTempUpDown1.Enabled = true;
+                parentForm.timerFurnaceTemp.StartTimer();
 
                 Properties.Settings.Default.FurnaceControlEnable = true;
             }
             else
             {
+                parentForm.timerFurnaceTemp.StopTimer();
                 port.Close();
                 onButton.Enabled = false;
                 offButton.Enabled = false;
                 setTempUpDown1.Enabled = false;
+
 
                 Properties.Settings.Default.FurnaceControlEnable = false;
 
