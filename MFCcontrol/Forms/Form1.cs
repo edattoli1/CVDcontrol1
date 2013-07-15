@@ -389,7 +389,7 @@ namespace MFCcontrol
             // temperature is contained in 7th to 10th characters, convert from hex
 
 
-            if (presentTemp.Length > 11)
+            if ( (presentTemp.Length >= 10) && HasHexNumber(presentTemp) )
                 furnaceControl1.presTempBox.Text = Convert.ToInt32(presentTemp.Substring(7, 4), 16).ToString();
             else
                 furnaceControl1.presTempBox.Text = "Read Error";
@@ -399,7 +399,19 @@ namespace MFCcontrol
 
         }
 
+        private bool HasHexNumber(string inputTemp)
+        {
+            
+            for (int i = 7; i <= 10; i++)
+            {
+                if ( ((inputTemp[i] >= '0') && (inputTemp[i] <= '9')) || ( (inputTemp[i] >= 'A') && (inputTemp[i] <= 'F')
+                    break;
+                else
+                    return false;
+            }
 
+            return true;
+        }
 
         private void UpdateADgraphHandler(object obj, EventArgs e)
         {
