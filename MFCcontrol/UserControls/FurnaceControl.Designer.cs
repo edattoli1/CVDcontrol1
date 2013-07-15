@@ -60,9 +60,9 @@
             // presTempBox
             // 
             this.presTempBox.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.presTempBox.Enabled = false;
             this.presTempBox.Location = new System.Drawing.Point(204, 71);
             this.presTempBox.Name = "presTempBox";
+            this.presTempBox.ReadOnly = true;
             this.presTempBox.Size = new System.Drawing.Size(87, 22);
             this.presTempBox.TabIndex = 48;
             // 
