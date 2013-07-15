@@ -71,7 +71,7 @@ namespace MFCcontrol
         {
             //\x0201010WRDD002,01\03 
             string inTemp;
-            port.Write((char)2 + "01010WRDD0002,01," + (char)3 + '\r');
+            port.Write((char)2 + "01010WRDD0002,01" + (char)3 + '\r');
             inTemp = port.ReadLine();
             presTempBox.Text = inTemp;
 
