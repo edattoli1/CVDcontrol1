@@ -225,8 +225,8 @@ namespace MFCcontrol
                 //    mfcControlArray[i].EnableUserControl();
             }
 
-            if (Properties.Settings.Default.FurnaceControlEnable)
-                timerFurnaceTemp.StartTimer();
+            //if (Properties.Settings.Default.FurnaceControlEnable)
+            //    timerFurnaceTemp.StartTimer();
 
            sensorBiasControl1.SensorBiasControlInit();
 
@@ -386,7 +386,9 @@ namespace MFCcontrol
 
             string presentTemp = furnaceControl1.UpdatePresTemperature();
 
-            furnaceControl1.presTempBox.Text = presentTemp;
+            furnaceControl1.presTempBox.Text = "test";
+
+            //furnaceControl1.presTempBox.Text = presentTemp;
 
 
             UpdateFurnaceTempBusy = false;
