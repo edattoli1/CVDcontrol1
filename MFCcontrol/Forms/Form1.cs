@@ -20,6 +20,7 @@ namespace MFCcontrol
         internal GenStopwatch watch;
         private GenTimer timerUI;
         internal GenTimer timerADgraph;
+        internal GenTimer timerFurnaceTemp;
         //private HiResTimer timerADacquire;
         internal GenTimer timerADacquire;
         internal GenTimer timerADoutUpdate;
@@ -156,6 +157,9 @@ namespace MFCcontrol
             timerADgraph = new GenTimer();
             timerADgraph.SetInterval(Properties.Settings.Default.GraphTimeUpdateMS);
 
+            timerFurnaceTemp = new GenTimer();
+            timerFurnaceTemp.SetInterval(Properties.Settings.Default.FurnaceTempUpdateTimeMs);
+
             //Set NumericUpDown Control box for Graph Update Time to Saved Value
             graphMfcs1.graphUpdateUDbox.Value = Convert.ToDecimal(Properties.Settings.Default.GraphTimeUpdateMS) / 1000;
 
@@ -167,6 +171,7 @@ namespace MFCcontrol
             timerUI.TimerElapsed += UpdateUIhandler;
             timerADacquire.TimerElapsed += UpdateADacquireHandlerAsync;
             timerADgraph.TimerElapsed += UpdateADgraphHandler;
+            timerFurnaceTemp.TimerElapsed += UpdateFurnaceTempHandler;
         }
 
         internal void Form1_Load(object sender, EventArgs e)
@@ -275,14 +280,12 @@ namespace MFCcontrol
 
             }
 
-            //Update Furnace Temperature
-
-            furnaceControl1.UpdatePresTemperature();
 
         }
 
         //delegate void UpdateADgraphDelegate();
 
+        private bool UpdateFurnaceTempBusy = false;
         private bool UpdateADgraphBusy = false;
         internal bool UpdateADacquireBusy = false;
         internal bool saveADdataBusy = false;
@@ -355,6 +358,35 @@ namespace MFCcontrol
             }
 
         }
+
+
+        private void UpdateFurnaceTempHandler(object obj, EventArgs e)
+        {
+            if (UpdateFurnaceTempBusy == true)
+                return;
+            else
+            {
+                UpdateFurnaceTemp();
+            }
+        }
+
+        private void UpdateFurnaceTemp()
+        {
+            UpdateFurnaceTempBusy = true;
+
+            if (InvokeRequired)
+            {
+                BeginInvoke((Action)UpdateFurnaceTemp);
+                return;
+            }
+
+            furnaceControl1.UpdatePresTemperature();
+
+
+            UpdateFurnaceTempBusy = false;
+
+        }
+
 
 
         private void UpdateADgraphHandler(object obj, EventArgs e)

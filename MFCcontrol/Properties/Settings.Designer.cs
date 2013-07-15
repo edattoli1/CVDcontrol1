@@ -563,5 +563,17 @@ namespace MFCcontrol.Properties {
                 this["PointsToPlot"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int FurnaceTempUpdateTimeMs {
+            get {
+                return ((int)(this["FurnaceTempUpdateTimeMs"]));
+            }
+            set {
+                this["FurnaceTempUpdateTimeMs"] = value;
+            }
+        }
     }
 }
