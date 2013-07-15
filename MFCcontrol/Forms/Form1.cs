@@ -386,9 +386,9 @@ namespace MFCcontrol
 
             string presentTemp = furnaceControl1.UpdatePresTemperature();
 
-            furnaceControl1.presTempBox.Text = "test";
+            //furnaceControl1.presTempBox.Text = "test";
 
-            //furnaceControl1.presTempBox.Text = presentTemp;
+            furnaceControl1.presTempBox.Text = presentTemp;
 
 
             UpdateFurnaceTempBusy = false;
