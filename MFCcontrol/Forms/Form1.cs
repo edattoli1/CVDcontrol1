@@ -386,9 +386,11 @@ namespace MFCcontrol
 
             string presentTemp = furnaceControl1.UpdatePresTemperature();
 
-            //furnaceControl1.presTempBox.Text = "test";
+            // temperature is contained in 7th to 10th characters, convert from hex
 
-            furnaceControl1.presTempBox.Text = presentTemp;
+
+
+            furnaceControl1.presTempBox.Text = Convert.ToInt32(presentTemp.Substring(7,4),16).ToString() ;
 
 
             UpdateFurnaceTempBusy = false;
