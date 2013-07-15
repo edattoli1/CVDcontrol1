@@ -404,7 +404,7 @@ namespace MFCcontrol
             
             for (int i = 7; i <= 10; i++)
             {
-                if ( ((inputTemp[i] >= '0') && (inputTemp[i] <= '9')) || ( (inputTemp[i] >= 'A') && (inputTemp[i] <= 'F')
+                if ( ((inputTemp[i] >= '0') && (inputTemp[i] <= '9')) || ( (inputTemp[i] >= 'A') && (inputTemp[i] <= 'F') ) )
                     break;
                 else
                     return false;

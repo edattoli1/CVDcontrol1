@@ -43,15 +43,25 @@ namespace MFCcontrol
         {
             ///set start sp amount, to 200
             // \x0201010WWRD0228,01,00C8\x03
-            port.Write((char)2 + "01010WWRD0228,01," + Convert.ToInt32(setTempUpDown1.Value).ToString("X4") + (char)3 + '\r');
 
-            //            set temperature to 200
-            //\x0201010WWRD0229,01,00C8\x03
-            port.Write((char)2 + "01010WWRD0229,01," + Convert.ToInt32(setTempUpDown1.Value).ToString("X4") + (char)3 + '\r');
+            try
+            {
+                port.Write((char)2 + "01010WWRD0228,01," + Convert.ToInt32(setTempUpDown1.Value).ToString("X4") + (char)3 + '\r');
 
-            //            set sp1 time (minutes), 68 hr
-            //\x0201010WWRD0230,01,0FFF\x03
-            port.Write((char)2 + "01010WWRD0229,01,0FFF" + (char)3 + '\r');
+                //            set temperature to 200
+                //\x0201010WWRD0229,01,00C8\x03
+                port.Write((char)2 + "01010WWRD0229,01," + Convert.ToInt32(setTempUpDown1.Value).ToString("X4") + (char)3 + '\r');
+
+                //            set sp1 time (minutes), 68 hr
+                //\x0201010WWRD0230,01,0FFF\x03
+                port.Write((char)2 + "01010WWRD0229,01,0FFF" + (char)3 + '\r');
+            }
+            catch
+            {
+                string messageBoxText = "Problem Sending Commands to Furnace";
+                string caption = "COM1 Problem";
+                var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
 
         }
 
@@ -63,7 +73,14 @@ namespace MFCcontrol
             //\x0201010WRDD002,01\03 
             string inTemp;
             port.Write((char)2 + "01010WRDD0002,01" + (char)3 + '\r');
-            inTemp = port.ReadTo("\r");
+            try
+            {
+                inTemp = port.ReadTo("\r");
+            }
+            catch
+            {
+                inTemp = "timeout";
+            }
             return inTemp;
 
         }
