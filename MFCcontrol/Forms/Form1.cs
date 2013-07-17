@@ -64,6 +64,7 @@ namespace MFCcontrol
         // maximum flow rate of the MFCs for the recipe to be used
         // 0th in array corresponds to MFC 1, .., etc
         internal int[] maxFlowMFCs;
+        internal double[] fudgeFactorsMFCs;
         
         private ConfigureMFCs MFCconfigure1;
 
@@ -124,6 +125,7 @@ namespace MFCcontrol
 
             stateMFCs = new bool[Properties.Settings.Default.MFCcontrol_numMFCs];
             maxFlowMFCs = new int[Properties.Settings.Default.MFCcontrol_numMFCs];
+            fudgeFactorsMFCs = new double[Properties.Settings.Default.MFCcontrol_numMFCs];
 
             currentADin = new double[Properties.Settings.Default.MFCcontrol_numMFCs];
             presentMFCsetting = new double[Properties.Settings.Default.MFCcontrol_numMFCs];
@@ -134,6 +136,8 @@ namespace MFCcontrol
             mfcGasNames = Util.StringToStringArray(Settings.Default.MfcGasNamesList);
 
             maxFlowMFCs = Util.StringToIntArray(Settings.Default.MfcMaxRangeList);
+
+            fudgeFactorsMFCs = Util.StringToDoubleArray(Settings.Default.MfcFudgeFactorList);
 
             mfcPlotEnableArray = Util.StringToBoolArray(Settings.Default.MfcPlotEnableList);
 
@@ -256,7 +260,7 @@ namespace MFCcontrol
             {
                 if ( (mfcAinChannels[i] != "") && (i < currentADin.Length) )
                 {
-                    mfcControlArray[i].UpdatePresFlowBox(DaqAction.GetMFCflowFromVolts(currentADin[currentADinIterator], i, maxFlowMFCs));
+                    mfcControlArray[i].UpdatePresFlowBox(DaqAction.GetMFCflowFromVolts(currentADin[currentADinIterator], i, maxFlowMFCs, fudgeFactorsMFCs));
                     currentADinIterator++;
                 }
             }
@@ -497,7 +501,7 @@ namespace MFCcontrol
                 if (stateMFCs[i] == true)
                 {
                     //numActiveMFCs++;
-                    await swriter.WriteAsync(string.Format("\t{0:F6}", DaqAction.GetMFCflowFromVolts(currentADin[i], i, maxFlowMFCs)));
+                    await swriter.WriteAsync(string.Format("\t{0:F6}", DaqAction.GetMFCflowFromVolts(currentADin[i], i, maxFlowMFCs, fudgeFactorsMFCs)));
                 }
             }
 
@@ -545,7 +549,7 @@ namespace MFCcontrol
             {
                 if ( (mfcAinChannels[i] != "") && (i < currentADin.Length) )
                 {
-                    graphMfcs1.chart1.Series[i].Points.AddXY(time, DaqAction.GetMFCflowFromVolts(currentADin[currentADinIterator], i, maxFlowMFCs));
+                    graphMfcs1.chart1.Series[i].Points.AddXY(time, DaqAction.GetMFCflowFromVolts(currentADin[currentADinIterator], i, maxFlowMFCs, fudgeFactorsMFCs));
                     currentADinIterator++;
                 }
             }
@@ -592,6 +596,7 @@ namespace MFCcontrol
             Settings.Default.MfcControlEnableList = Util.BoolArrayToString(stateMFCs);
             Settings.Default.MfcGasNamesList = Util.StringArrayToString(mfcGasNames);
             Settings.Default.MfcMaxRangeList = Util.IntArrayToString(maxFlowMFCs);
+            Settings.Default.MfcFudgeFactorList = Util.DoubleArrayToString(fudgeFactorsMFCs);
             Settings.Default.MfcPlotEnableList = Util.BoolArrayToString(mfcPlotEnableArray);
 
             //Save all Settings
@@ -607,8 +612,7 @@ namespace MFCcontrol
                 IsADoutfileOpen = false;
             }
 
-            // close serial port
-            furnaceControl1.port.Close();
+            
 
         }
 
@@ -776,6 +780,13 @@ namespace MFCcontrol
             graphMfcs1.AinGraphUpdateBox_CheckedChanged(this, EventArgs.Empty);
 
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // close serial port
+            if (furnaceControl1.furnaceControlCheckBox.Checked == true)
+                furnaceControl1.furnaceControlCheckBox.Checked = false;
         }
 
 

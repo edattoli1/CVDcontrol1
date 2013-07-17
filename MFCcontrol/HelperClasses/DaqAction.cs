@@ -158,10 +158,10 @@ namespace MFCcontrol
 
         }
 
-        static public double GetMFCflowFromVolts(double inputVolts, int mfcNumber, int[] maxFlows)
+        static public double GetMFCflowFromVolts(double inputVolts, int mfcNumber, int[] maxFlows, double[] mfcFudges)
         {
-            // TODO Change Input Scaling MFCs
-            return (inputVolts / 1) * Convert.ToDouble(maxFlows[mfcNumber]);
+
+            return (inputVolts / 1) * Convert.ToDouble(maxFlows[mfcNumber]) * mfcFudges[mfcNumber];
 
         }
 

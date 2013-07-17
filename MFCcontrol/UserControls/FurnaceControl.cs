@@ -32,7 +32,6 @@ namespace MFCcontrol
             if (Properties.Settings.Default.FurnaceControlEnable == true)
                 furnaceControlCheckBox.Checked = true;
 
-            port.ReadTimeout = 50;
         }
 
         private void offButton_Click(object sender, EventArgs e)
@@ -100,6 +99,8 @@ namespace MFCcontrol
                 {
                     port = new SerialPort("COM1", 9600, Parity.Even, 8, StopBits.One);
                     port.Open();
+                    port.ReadTimeout = 50;
+
                 }
                 catch
                 {

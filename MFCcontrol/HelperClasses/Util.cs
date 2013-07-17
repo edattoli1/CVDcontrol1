@@ -42,11 +42,21 @@ namespace MFCcontrol
             return sIn.Split(',').Select(s => Int32.Parse(s)).ToArray();
         }
 
+        static internal double[] StringToDoubleArray(string sIn)
+        {
+            return sIn.Split(',').Select(s => Double.Parse(s)).ToArray();
+        }
+
         static internal string IntArrayToString(int[] intArr)
         {
             return String.Join(",", intArr.Select(i => i.ToString()).ToArray());
         }
-        
+
+        static internal string DoubleArrayToString(double[] doubleArr)
+        {
+            return String.Join(",", doubleArr.Select(i => i.ToString()).ToArray());
+        }
+
         public class ADstorage
         {
             // single instance of class which is created on declaration

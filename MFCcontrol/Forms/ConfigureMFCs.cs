@@ -26,7 +26,7 @@ namespace MFCcontrol
         private void saveButton_Click(object sender, EventArgs e)
         {
             TextBox curMfcTypeBox;
-            NumericUpDown curMfcMaxFlowUpDown;
+            NumericUpDown curMfcMaxFlowUpDown, curMfcFudgeFactorUpDown;
             ComboBox curMfcAinComboBox, curMfcAoutComboBox;
 
             for (int i = 0; i < parentForm.mfcControlArray.Length; i++)
@@ -36,6 +36,9 @@ namespace MFCcontrol
 
                 curMfcMaxFlowUpDown = (NumericUpDown) tableLayoutPanel1.Controls["mfcMaxFlowUpDown" + (i + 1).ToString()];
                 parentForm.maxFlowMFCs[i] = Convert.ToInt32(curMfcMaxFlowUpDown.Value);
+
+                curMfcFudgeFactorUpDown = (NumericUpDown)tableLayoutPanel1.Controls["mfcFudgeUpDown" + (i + 1).ToString()];
+                parentForm.fudgeFactorsMFCs[i] = Convert.ToDouble(curMfcFudgeFactorUpDown.Value);
 
                 curMfcAinComboBox = (ComboBox)tableLayoutPanel1.Controls["mfcAinComboBox" + (i + 1).ToString()];
                 if (curMfcAinComboBox.Text != null)
@@ -62,7 +65,7 @@ namespace MFCcontrol
             if (parentForm != null)
             {
                 TextBox curMfcTypeBox;
-                NumericUpDown curMfcMaxFlowUpDown;
+                NumericUpDown curMfcMaxFlowUpDown, curMfcFudgeFactorUpDown;
                 ComboBox curMfcAinComboBox, curMfcAoutComboBox;
                 string[] aiChannels = DaqSystem.Local.GetPhysicalChannels(PhysicalChannelTypes.AI, PhysicalChannelAccess.External);
                 string[] aoChannels = DaqSystem.Local.GetPhysicalChannels(PhysicalChannelTypes.AO, PhysicalChannelAccess.External);
@@ -74,6 +77,9 @@ namespace MFCcontrol
                     curMfcTypeBox.Text = parentForm.mfcGasNames[i];
                     curMfcMaxFlowUpDown = (NumericUpDown) tableLayoutPanel1.Controls["mfcMaxFlowUpDown" + (i + 1).ToString()];
                     curMfcMaxFlowUpDown.Value = (parentForm.maxFlowMFCs[i]);
+
+                    curMfcFudgeFactorUpDown = (NumericUpDown)tableLayoutPanel1.Controls["mfcFudgeUpDown" + (i + 1).ToString()];
+                    curMfcFudgeFactorUpDown.Value = Convert.ToDecimal((parentForm.fudgeFactorsMFCs[i]));
 
                     curMfcAinComboBox = (ComboBox)tableLayoutPanel1.Controls["mfcAinComboBox" + (i + 1).ToString()];
                     curMfcAinComboBox.Items.AddRange(aiChannels);

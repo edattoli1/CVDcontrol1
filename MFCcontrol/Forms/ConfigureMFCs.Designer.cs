@@ -37,6 +37,7 @@
             this.mfcTypeBox2 = new System.Windows.Forms.TextBox();
             this.mfcTypeBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.mfcMaxFlowUpDown7 = new System.Windows.Forms.NumericUpDown();
             this.mfcMaxFlowUpDown8 = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.mfcAinComboBox1 = new System.Windows.Forms.ComboBox();
             this.mfcAinComboBox2 = new System.Windows.Forms.ComboBox();
             this.mfcAinComboBox3 = new System.Windows.Forms.ComboBox();
@@ -75,6 +75,15 @@
             this.mfcAoutComboBox6 = new System.Windows.Forms.ComboBox();
             this.mfcAoutComboBox7 = new System.Windows.Forms.ComboBox();
             this.mfcAoutComboBox8 = new System.Windows.Forms.ComboBox();
+            this.mfcFudgeUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.mfcFudgeUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.mfcFudgeUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.mfcFudgeUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.mfcFudgeUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.mfcFudgeUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.mfcFudgeUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.mfcFudgeUpDown8 = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mfcMaxFlowUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mfcMaxFlowUpDown2)).BeginInit();
@@ -84,6 +93,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.mfcMaxFlowUpDown6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mfcMaxFlowUpDown7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mfcMaxFlowUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown8)).BeginInit();
             this.SuspendLayout();
             // 
             // mfc1Display
@@ -167,12 +184,14 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnCount = 6;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.label11, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.label10, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.mfc1Display, 0, 1);
@@ -217,6 +236,14 @@
             this.tableLayoutPanel1.Controls.Add(this.mfcAoutComboBox6, 4, 6);
             this.tableLayoutPanel1.Controls.Add(this.mfcAoutComboBox7, 4, 7);
             this.tableLayoutPanel1.Controls.Add(this.mfcAoutComboBox8, 4, 8);
+            this.tableLayoutPanel1.Controls.Add(this.mfcFudgeUpDown1, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.mfcFudgeUpDown2, 5, 2);
+            this.tableLayoutPanel1.Controls.Add(this.mfcFudgeUpDown3, 5, 3);
+            this.tableLayoutPanel1.Controls.Add(this.mfcFudgeUpDown4, 5, 4);
+            this.tableLayoutPanel1.Controls.Add(this.mfcFudgeUpDown5, 5, 5);
+            this.tableLayoutPanel1.Controls.Add(this.mfcFudgeUpDown6, 5, 6);
+            this.tableLayoutPanel1.Controls.Add(this.mfcFudgeUpDown7, 5, 7);
+            this.tableLayoutPanel1.Controls.Add(this.mfcFudgeUpDown8, 5, 8);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(19, 19);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
@@ -229,8 +256,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.08288F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.08288F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.08288F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(645, 425);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(774, 425);
             this.tableLayoutPanel1.TabIndex = 22;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(504, 8);
+            this.label10.Margin = new System.Windows.Forms.Padding(8);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 17);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Analog Out";
             // 
             // label8
             // 
@@ -500,16 +537,6 @@
             this.label9.TabIndex = 44;
             this.label9.Text = "Analog In";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(504, 8);
-            this.label10.Margin = new System.Windows.Forms.Padding(8);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 17);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Analog Out";
-            // 
             // mfcAinComboBox1
             // 
             this.mfcAinComboBox1.FormattingEnabled = true;
@@ -654,11 +681,253 @@
             this.mfcAoutComboBox8.Size = new System.Drawing.Size(113, 24);
             this.mfcAoutComboBox8.TabIndex = 60;
             // 
+            // mfcFudgeUpDown1
+            // 
+            this.mfcFudgeUpDown1.DecimalPlaces = 2;
+            this.mfcFudgeUpDown1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown1.Location = new System.Drawing.Point(653, 55);
+            this.mfcFudgeUpDown1.Margin = new System.Windows.Forms.Padding(8);
+            this.mfcFudgeUpDown1.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.mfcFudgeUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown1.Name = "mfcFudgeUpDown1";
+            this.mfcFudgeUpDown1.Size = new System.Drawing.Size(77, 22);
+            this.mfcFudgeUpDown1.TabIndex = 61;
+            this.mfcFudgeUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(653, 8);
+            this.label11.Margin = new System.Windows.Forms.Padding(8);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(108, 31);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Multiplier Fudge\r\nFactor";
+            // 
+            // mfcFudgeUpDown2
+            // 
+            this.mfcFudgeUpDown2.DecimalPlaces = 2;
+            this.mfcFudgeUpDown2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown2.Location = new System.Drawing.Point(653, 102);
+            this.mfcFudgeUpDown2.Margin = new System.Windows.Forms.Padding(8);
+            this.mfcFudgeUpDown2.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.mfcFudgeUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown2.Name = "mfcFudgeUpDown2";
+            this.mfcFudgeUpDown2.Size = new System.Drawing.Size(77, 22);
+            this.mfcFudgeUpDown2.TabIndex = 62;
+            this.mfcFudgeUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // mfcFudgeUpDown3
+            // 
+            this.mfcFudgeUpDown3.DecimalPlaces = 2;
+            this.mfcFudgeUpDown3.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown3.Location = new System.Drawing.Point(653, 145);
+            this.mfcFudgeUpDown3.Margin = new System.Windows.Forms.Padding(8);
+            this.mfcFudgeUpDown3.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.mfcFudgeUpDown3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown3.Name = "mfcFudgeUpDown3";
+            this.mfcFudgeUpDown3.Size = new System.Drawing.Size(77, 22);
+            this.mfcFudgeUpDown3.TabIndex = 63;
+            this.mfcFudgeUpDown3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // mfcFudgeUpDown4
+            // 
+            this.mfcFudgeUpDown4.DecimalPlaces = 2;
+            this.mfcFudgeUpDown4.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown4.Location = new System.Drawing.Point(653, 194);
+            this.mfcFudgeUpDown4.Margin = new System.Windows.Forms.Padding(8);
+            this.mfcFudgeUpDown4.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.mfcFudgeUpDown4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown4.Name = "mfcFudgeUpDown4";
+            this.mfcFudgeUpDown4.Size = new System.Drawing.Size(77, 22);
+            this.mfcFudgeUpDown4.TabIndex = 64;
+            this.mfcFudgeUpDown4.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // mfcFudgeUpDown5
+            // 
+            this.mfcFudgeUpDown5.DecimalPlaces = 2;
+            this.mfcFudgeUpDown5.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown5.Location = new System.Drawing.Point(653, 243);
+            this.mfcFudgeUpDown5.Margin = new System.Windows.Forms.Padding(8);
+            this.mfcFudgeUpDown5.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.mfcFudgeUpDown5.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown5.Name = "mfcFudgeUpDown5";
+            this.mfcFudgeUpDown5.Size = new System.Drawing.Size(77, 22);
+            this.mfcFudgeUpDown5.TabIndex = 65;
+            this.mfcFudgeUpDown5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // mfcFudgeUpDown6
+            // 
+            this.mfcFudgeUpDown6.DecimalPlaces = 2;
+            this.mfcFudgeUpDown6.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown6.Location = new System.Drawing.Point(653, 290);
+            this.mfcFudgeUpDown6.Margin = new System.Windows.Forms.Padding(8);
+            this.mfcFudgeUpDown6.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.mfcFudgeUpDown6.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown6.Name = "mfcFudgeUpDown6";
+            this.mfcFudgeUpDown6.Size = new System.Drawing.Size(77, 22);
+            this.mfcFudgeUpDown6.TabIndex = 66;
+            this.mfcFudgeUpDown6.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // mfcFudgeUpDown7
+            // 
+            this.mfcFudgeUpDown7.DecimalPlaces = 2;
+            this.mfcFudgeUpDown7.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown7.Location = new System.Drawing.Point(653, 337);
+            this.mfcFudgeUpDown7.Margin = new System.Windows.Forms.Padding(8);
+            this.mfcFudgeUpDown7.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.mfcFudgeUpDown7.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown7.Name = "mfcFudgeUpDown7";
+            this.mfcFudgeUpDown7.Size = new System.Drawing.Size(77, 22);
+            this.mfcFudgeUpDown7.TabIndex = 67;
+            this.mfcFudgeUpDown7.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // mfcFudgeUpDown8
+            // 
+            this.mfcFudgeUpDown8.DecimalPlaces = 2;
+            this.mfcFudgeUpDown8.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown8.Location = new System.Drawing.Point(653, 384);
+            this.mfcFudgeUpDown8.Margin = new System.Windows.Forms.Padding(8);
+            this.mfcFudgeUpDown8.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.mfcFudgeUpDown8.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.mfcFudgeUpDown8.Name = "mfcFudgeUpDown8";
+            this.mfcFudgeUpDown8.Size = new System.Drawing.Size(77, 22);
+            this.mfcFudgeUpDown8.TabIndex = 68;
+            this.mfcFudgeUpDown8.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // ConfigureMFCs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 505);
+            this.ClientSize = new System.Drawing.Size(804, 505);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
@@ -675,6 +944,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.mfcMaxFlowUpDown6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mfcMaxFlowUpDown7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mfcMaxFlowUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -728,6 +1005,15 @@
         private System.Windows.Forms.ComboBox mfcAoutComboBox6;
         private System.Windows.Forms.ComboBox mfcAoutComboBox7;
         private System.Windows.Forms.ComboBox mfcAoutComboBox8;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown mfcFudgeUpDown1;
+        private System.Windows.Forms.NumericUpDown mfcFudgeUpDown2;
+        private System.Windows.Forms.NumericUpDown mfcFudgeUpDown3;
+        private System.Windows.Forms.NumericUpDown mfcFudgeUpDown4;
+        private System.Windows.Forms.NumericUpDown mfcFudgeUpDown5;
+        private System.Windows.Forms.NumericUpDown mfcFudgeUpDown6;
+        private System.Windows.Forms.NumericUpDown mfcFudgeUpDown7;
+        private System.Windows.Forms.NumericUpDown mfcFudgeUpDown8;
 
     }
 }

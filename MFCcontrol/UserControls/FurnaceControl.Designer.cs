@@ -164,6 +164,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         internal System.Windows.Forms.TextBox presTempBox;
-        private System.Windows.Forms.CheckBox furnaceControlCheckBox;
+        internal System.Windows.Forms.CheckBox furnaceControlCheckBox;
     }
 }

@@ -578,13 +578,25 @@ namespace MFCcontrol.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool FurnaceControlEnable {
             get {
                 return ((bool)(this["FurnaceControlEnable"]));
             }
             set {
                 this["FurnaceControlEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1,1,1,1,1,1,1,1")]
+        public string MfcFudgeFactorList {
+            get {
+                return ((string)(this["MfcFudgeFactorList"]));
+            }
+            set {
+                this["MfcFudgeFactorList"] = value;
             }
         }
     }
