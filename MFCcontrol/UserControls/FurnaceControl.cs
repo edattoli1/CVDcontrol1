@@ -31,6 +31,8 @@ namespace MFCcontrol
         {
             if (Properties.Settings.Default.FurnaceControlEnable == true)
                 furnaceControlCheckBox.Checked = true;
+
+            port.ReadTimeout = 50;
         }
 
         private void offButton_Click(object sender, EventArgs e)
@@ -72,16 +74,15 @@ namespace MFCcontrol
             
             //\x0201010WRDD002,01\03 
             string inTemp;
-            char [] inRead = {};
             port.Write((char)2 + "01010WRDD0002,01" + (char)3 + '\r');
-            int returnBytes;
             try
             {
-                // old
-                // port.ReadTo("\r");
-                returnBytes = port.Read(inRead, 0, 11);
-                inTemp = new string (inRead);
+                // alternative
+                 //                returnBytes = port.Read(inRead, 0, 11);
+                // inTemp = new string (inRead);
+                 
 
+                inTemp = port.ReadTo("\r");
             }
             catch
             {
