@@ -72,10 +72,16 @@ namespace MFCcontrol
             
             //\x0201010WRDD002,01\03 
             string inTemp;
+            char [] inRead = {};
             port.Write((char)2 + "01010WRDD0002,01" + (char)3 + '\r');
+            int returnBytes;
             try
             {
-                inTemp = port.ReadTo("\r");
+                // old
+                // port.ReadTo("\r");
+                returnBytes = port.Read(inRead, 0, 11);
+                inTemp = new string (inRead);
+
             }
             catch
             {
