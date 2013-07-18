@@ -37,6 +37,7 @@
             this.mfcTypeBox2 = new System.Windows.Forms.TextBox();
             this.mfcTypeBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -76,7 +77,6 @@
             this.mfcAoutComboBox7 = new System.Windows.Forms.ComboBox();
             this.mfcAoutComboBox8 = new System.Windows.Forms.ComboBox();
             this.mfcFudgeUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
             this.mfcFudgeUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.mfcFudgeUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.mfcFudgeUpDown4 = new System.Windows.Forms.NumericUpDown();
@@ -84,6 +84,7 @@
             this.mfcFudgeUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.mfcFudgeUpDown7 = new System.Windows.Forms.NumericUpDown();
             this.mfcFudgeUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mfcMaxFlowUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mfcMaxFlowUpDown2)).BeginInit();
@@ -148,7 +149,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(217, 456);
+            this.cancelButton.Location = new System.Drawing.Point(203, 456);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 35);
             this.cancelButton.TabIndex = 18;
@@ -190,7 +191,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel1.Controls.Add(this.label11, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.label10, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 8);
@@ -258,6 +259,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.08288F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(774, 425);
             this.tableLayoutPanel1.TabIndex = 22;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(653, 8);
+            this.label11.Margin = new System.Windows.Forms.Padding(8);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(108, 31);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Multiplier Fudge\r\nFactor";
             // 
             // label10
             // 
@@ -710,16 +721,6 @@
             0,
             0});
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(653, 8);
-            this.label11.Margin = new System.Windows.Forms.Padding(8);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 31);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Multiplier Fudge\r\nFactor";
-            // 
             // mfcFudgeUpDown2
             // 
             this.mfcFudgeUpDown2.DecimalPlaces = 2;
@@ -923,11 +924,22 @@
             0,
             0});
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(338, 465);
+            this.label12.Margin = new System.Windows.Forms.Padding(8);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(422, 17);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Note: All Analog In Boxes Must Have a Selection (Blank is not OK)";
+            // 
             // ConfigureMFCs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 505);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
@@ -953,6 +965,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mfcFudgeUpDown8)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1014,6 +1027,7 @@
         private System.Windows.Forms.NumericUpDown mfcFudgeUpDown6;
         private System.Windows.Forms.NumericUpDown mfcFudgeUpDown7;
         private System.Windows.Forms.NumericUpDown mfcFudgeUpDown8;
+        private System.Windows.Forms.Label label12;
 
     }
 }

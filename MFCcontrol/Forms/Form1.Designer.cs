@@ -471,7 +471,7 @@
         internal System.Windows.Forms.CheckBox mfcMainControlEnable;
         internal DigitalOutputControl digitalOutputControl1;
         internal UserControls.GateSweepControl gateSweepControl1;
-        private FurnaceControl furnaceControl1;
+        internal FurnaceControl furnaceControl1;
         
     }
 }

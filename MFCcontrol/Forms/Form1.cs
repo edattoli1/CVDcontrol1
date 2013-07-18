@@ -527,7 +527,7 @@ namespace MFCcontrol
             }
 
             //Check whether need to cull points to plot (points are getting too big, take out half the points)
-            if (pointsPlotted > graphMfcs1.pointsToPlotUpDown.Value)
+            if (pointsPlotted > graphMfcs1.pointsToPlot)
             {
                 for (int i = 0; i < mfcControlArray.Length; i++)
                 {

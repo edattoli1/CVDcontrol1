@@ -211,6 +211,9 @@ namespace MFCcontrol
             //Disable Gate Bias Controls
             parentForm.gateSweepControl1.DisableUserControl();
 
+            // Disable Furance Control
+            parentForm.furnaceControl1.DisableUserControl();
+
 
             lastRecipeTimeEventBox.Text = "0";
 

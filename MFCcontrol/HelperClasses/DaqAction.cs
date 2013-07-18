@@ -60,13 +60,15 @@ namespace MFCcontrol
             {
                 //Parse the input string, if there is a daq input in the list, read from it, else break from the loop
 
-                if (parseStr == "")
+                //check if at end of list
+                if ( (parseStr == "") )
                 {
                     daqsToLoop = false;
                     break;
                 }
 
-                locNextDel = (parseStr.IndexOf(',') == -1) ? 0 : parseStr.IndexOf(',');
+                // locNextDel = (parseStr.IndexOf(',') == -1 || parseStr.IndexOf(',') == 0) ? 0 : parseStr.IndexOf(',');
+                locNextDel = (parseStr.IndexOf(',') == -1 ) ? 0 : parseStr.IndexOf(',');
 
                 if (locNextDel != 0)
                     curDaqLine = parseStr.Substring(0, locNextDel);

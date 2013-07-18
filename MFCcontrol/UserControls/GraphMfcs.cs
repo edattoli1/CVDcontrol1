@@ -13,6 +13,7 @@ namespace MFCcontrol
     public partial class GraphMfcs : UserControl
     {
         internal Form1 parentForm;
+        internal int pointsToPlot = 10;
         
         public GraphMfcs()
         {
@@ -85,6 +86,7 @@ namespace MFCcontrol
         private void pointsToPlotUpDown_ValueChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.PointsToPlot = Convert.ToInt32(pointsToPlotUpDown.Value);
+            pointsToPlot = Convert.ToInt32(pointsToPlotUpDown.Value);
             Properties.Settings.Default.Save();
         }
 

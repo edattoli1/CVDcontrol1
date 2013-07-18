@@ -91,6 +91,23 @@ namespace MFCcontrol
 
         }
 
+        internal void DisableUserControl()
+        {
+            onButton.Enabled = false;
+            offButton.Enabled = false;
+            setTempUpDown1.Enabled = false;
+
+        }
+
+        internal void EnableUserControl()
+        {
+            onButton.Enabled = true;
+            offButton.Enabled = true;
+            setTempUpDown1.Enabled = true;
+
+        }
+
+
         private void furnaceControlCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (furnaceControlCheckBox.Checked == true)
