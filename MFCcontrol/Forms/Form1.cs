@@ -32,6 +32,8 @@ namespace MFCcontrol
 
         internal List<string[]> DigOutTableValues_s;
         internal List<int[]> DigOutTableValues_i;
+        internal List<string> FurnaceTempList_s;
+        internal List<int> FurnaceTempList_i;
 
         private static double[] currentADin;
         private DaqAction daqInput;

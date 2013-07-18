@@ -301,6 +301,26 @@ namespace MFCcontrol
                 }
 
 
+                // Load Furnace Temperature Recipe Part TODO
+
+
+
+                //List <string> furnaceTempReadList = sshtLoad1.LoadFurnaceTemps(this.openFileDialog1.FileName, parentForm.ADoutTableValues_d.Count);
+                parentForm.FurnaceTempList_s = sshtLoad1.LoadFurnaceTemps(this.openFileDialog1.FileName, parentForm.ADoutTableValues_d.Count);
+
+                parentForm.FurnaceTempList_i = new List<int>();
+                //int[] currentRow_i;
+
+                int[] furnaceTempsArray = new int[parentForm.ADoutTableValues_d.Count];
+                for (int i = 0; i < parentForm.ADoutTableValues_d.Count; i++)
+                {
+                    if ((parentForm.FurnaceTempList_s[i] == "") || (parentForm.FurnaceTempList_s[i] == null))
+                        parentForm.FurnaceTempList_i.Add( -1 );
+                    else
+                        parentForm.FurnaceTempList_i.Add ( Convert.ToInt32(parentForm.FurnaceTempList_s[i]) );
+                }
+
+
 
                 if ( (parentForm.mfcMainControlEnable.Checked == true) )
                     startButton.Enabled = true;
@@ -312,7 +332,7 @@ namespace MFCcontrol
 
         private void viewFlowRecipe_Click(object sender, EventArgs e)
         {
-            RecipeView1 = new RecipeView(this, parentForm.ADoutTableValues_s, parentForm.DigOutTableValues_s, parentForm.stateMFCs);
+            RecipeView1 = new RecipeView(this, parentForm.ADoutTableValues_s, parentForm.DigOutTableValues_s, parentForm.FurnaceTempList_s, parentForm.stateMFCs);
 
             RecipeView1.Show();
         }

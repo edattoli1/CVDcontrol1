@@ -13,6 +13,7 @@ namespace MFCcontrol
         private const string sheetName = "Sheet1";
         private List<string[]> tableLoad = new List<string[]>();
         private List<string[]> tableLoadDigOut = new List<string[]>();
+        private List<string> tableLoadTemps = new List<string>();
 
         public bool[] LoadMFCstate(string fileName)
         {
@@ -222,6 +223,47 @@ namespace MFCcontrol
             return tableLoadDigOut;
         }
 
+        public List<string> LoadFurnaceTemps(string fileName, int numRows)
+        {
+            using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
+            {
+                WorkbookPart wbPart = document.WorkbookPart;
+
+                // Find the sheet with the supplied name, and then use that Sheet object
+                // to retrieve a reference to the appropriate worksheet.
+                Sheet theSheet = wbPart.Workbook.Descendants<Sheet>().
+                  Where(s => s.Name == sheetName).FirstOrDefault();
+
+                if (theSheet == null)
+                {
+                    throw new ArgumentException("sheetName");
+                }
+
+                // Retrieve a reference to the worksheet part, and then use its Worksheet property to get 
+                // a reference to the cell whose address matches the address you've supplied:
+                WorksheetPart wsPart = (WorksheetPart)(wbPart.GetPartById(theSheet.Id));
+
+                int numCols = 1;
+
+                //start at this row in the spreadsheet file
+                int rowIterator = 4;
+
+                string currentRow;
+
+                for (int i = 0; i < numRows; i++)
+                {
+                    currentRow = XLGetRowTemperatures(numCols, rowIterator.ToString(), wsPart);
+
+                    // stop loading spreadsheet once you hit -1 in the first column of a row
+
+                    tableLoadTemps.Add(currentRow);
+                    rowIterator++;
+                }
+            }
+
+            return tableLoadTemps;
+        }
+
         public static string[] XLGetRowDigOut(int numCols, string sSheetRowNum, WorksheetPart wsPart)
         {
             string[] returnList = new string[numCols];
@@ -236,7 +278,17 @@ namespace MFCcontrol
             return returnList;
         }
 
+        public static string XLGetRowTemperatures(int numCols, string sSheetRowNum, WorksheetPart wsPart)
+        {
+            string returnString;
+            int returnListIterator = 0;
 
+
+            returnString = XLGetCellValue(wsPart, 'R' + sSheetRowNum);
+
+
+            return returnString;
+        }
 
         public static string[] XLGetRowMFC(int numCols, string sSheetRowNum, WorksheetPart wsPart)
         {

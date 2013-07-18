@@ -16,14 +16,16 @@ namespace MFCcontrol
         //private Form1 mainForm;
         private List<string[]> MfcTableList;
         private List<string[]> DigOutTableList;
+        private List<string> FurnaceTempList;
         private bool[] stateMFCs;
 
-        public RecipeView(MfcRecipeControl parentFormIn, List<string[]> inputMfcTable, List<string[]> inputDigOutTable, bool[] stateMFCsIn)
+        public RecipeView(MfcRecipeControl parentFormIn, List<string[]> inputMfcTable, List<string[]> inputDigOutTable, List<string> inputFurnaceTempList, bool[] stateMFCsIn)
         {
             InitializeComponent();
             parentForm = parentFormIn;
             MfcTableList = inputMfcTable;
             DigOutTableList = inputDigOutTable;
+            FurnaceTempList = inputFurnaceTempList;
             stateMFCs = stateMFCsIn;
 
             parentForm.DisableViewFlowBtn();
@@ -35,7 +37,7 @@ namespace MFCcontrol
             dataGridView1.ReadOnly = true;
             
             // Create an unbound DataGridView by declaring a column count.
-            dataGridView1.ColumnCount = Properties.Settings.Default.MFCcontrol_numMFCs + 1 + Properties.Settings.Default.DigitalOutputNumLines;
+            dataGridView1.ColumnCount = Properties.Settings.Default.MFCcontrol_numMFCs + 1 + Properties.Settings.Default.DigitalOutputNumLines + 1;
             dataGridView1.ColumnHeadersVisible = true;
 
             // Set the column header style.
@@ -80,9 +82,11 @@ namespace MFCcontrol
             dataGridView1.Columns[15].Width = 50;
             dataGridView1.Columns[16].Name = "D8";
             dataGridView1.Columns[16].Width = 50;
+            dataGridView1.Columns[17].Name = "Temp.";
+            dataGridView1.Columns[16].Width = 50;
 
 
-            LoadValuesDataGridView(MfcTableList, DigOutTableList);
+            LoadValuesDataGridView(MfcTableList, DigOutTableList, FurnaceTempList);
         }
 
         private void RecipeView_FormClosing(object sender, FormClosingEventArgs e)
@@ -90,15 +94,16 @@ namespace MFCcontrol
             parentForm.EnableViewFlowBtn();
         }
 
-        public void LoadValuesDataGridView(List<string[]> inputList_s, List<string[]> inputList2_s)
+        public void LoadValuesDataGridView(List<string[]> inputList_s, List<string[]> inputList2_s, List<string> inputList3_s)
         {
             for (int i = 0; i < inputList_s.Count; i++)
             {
                 string[] curRow1 = inputList_s.ElementAt(i);
                 string[] curRow2 = inputList2_s.ElementAt(i);
-                string[] curRow = new string[curRow1.Length + curRow2.Length];
+                string[] curRow = new string[curRow1.Length + curRow2.Length + 1];
                 Array.Copy(curRow1, curRow, curRow1.Length);
                 Array.Copy(curRow2, 0, curRow, curRow1.Length, curRow2.Length);
+                curRow[curRow1.Length + curRow2.Length] = inputList3_s.ElementAt(i);
                 dataGridView1.Rows.Add(curRow);
             }
 
