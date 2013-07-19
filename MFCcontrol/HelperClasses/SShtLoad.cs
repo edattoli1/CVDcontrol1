@@ -56,6 +56,38 @@ namespace MFCcontrol
 
         }
 
+        public bool LoadFurnaceControlState(string fileName)
+        {
+
+            using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
+            {
+                WorkbookPart wbPart = document.WorkbookPart;
+
+                // Find the sheet with the supplied name, and then use that Sheet object
+                // to retrieve a reference to the appropriate worksheet.
+                Sheet theSheet = wbPart.Workbook.Descendants<Sheet>().
+                  Where(s => s.Name == sheetName).FirstOrDefault();
+
+                if (theSheet == null)
+                {
+                    throw new ArgumentException("sheetName");
+                }
+
+                // Retrieve a reference to the worksheet part, and then use its Worksheet property to get 
+                // a reference to the cell whose address matches the address you've supplied:
+                WorksheetPart wsPart = (WorksheetPart)(wbPart.GetPartById(theSheet.Id));
+
+                int furnaceControlBoxValue = Convert.ToInt32(XLGetCellValue(wsPart, "R1"));
+
+                if (furnaceControlBoxValue > 0)
+                    return true;
+                else
+                    return false;
+
+            }
+
+        }
+
         public int[] LoadMFCmaxFlows(string fileName)
         {
             int[] returnArray = new int[Properties.Settings.Default.MFCcontrol_numMFCs];

@@ -33,14 +33,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.mfcControl8 = new MFCcontrol.MFCcontrolTemplate();
-            this.mfcControl7 = new MFCcontrol.MFCcontrolTemplate();
-            this.mfcControl4 = new MFCcontrol.MFCcontrolTemplate();
-            this.mfcControl1 = new MFCcontrol.MFCcontrolTemplate();
-            this.mfcControl2 = new MFCcontrol.MFCcontrolTemplate();
-            this.mfcControl3 = new MFCcontrol.MFCcontrolTemplate();
-            this.mfcControl5 = new MFCcontrol.MFCcontrolTemplate();
-            this.mfcControl6 = new MFCcontrol.MFCcontrolTemplate();
             this.mfcMainControlEnable = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
@@ -54,13 +46,21 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.controlPicoammBox = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.furnaceControl1 = new MFCcontrol.FurnaceControl();
             this.gateSweepControl1 = new MFCcontrol.UserControls.GateSweepControl();
             this.digitalOutputControl1 = new MFCcontrol.DigitalOutputControl();
             this.switchMatrixControl1 = new MFCcontrol.SwitchMatrixControl();
             this.graphMfcs1 = new MFCcontrol.GraphMfcs();
             this.sensorBiasControl1 = new MFCcontrol.SensorBiasControl();
             this.mfcRecipeControl1 = new MFCcontrol.MfcRecipeControl();
-            this.furnaceControl1 = new MFCcontrol.FurnaceControl();
+            this.mfcControl8 = new MFCcontrol.MFCcontrolTemplate();
+            this.mfcControl7 = new MFCcontrol.MFCcontrolTemplate();
+            this.mfcControl4 = new MFCcontrol.MFCcontrolTemplate();
+            this.mfcControl1 = new MFCcontrol.MFCcontrolTemplate();
+            this.mfcControl2 = new MFCcontrol.MFCcontrolTemplate();
+            this.mfcControl3 = new MFCcontrol.MFCcontrolTemplate();
+            this.mfcControl5 = new MFCcontrol.MFCcontrolTemplate();
+            this.mfcControl6 = new MFCcontrol.MFCcontrolTemplate();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -137,62 +137,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(496, 321);
             this.tableLayoutPanel2.TabIndex = 36;
-            // 
-            // mfcControl8
-            // 
-            this.mfcControl8.Location = new System.Drawing.Point(3, 283);
-            this.mfcControl8.Name = "mfcControl8";
-            this.mfcControl8.Size = new System.Drawing.Size(487, 34);
-            this.mfcControl8.TabIndex = 41;
-            // 
-            // mfcControl7
-            // 
-            this.mfcControl7.Location = new System.Drawing.Point(3, 243);
-            this.mfcControl7.Name = "mfcControl7";
-            this.mfcControl7.Size = new System.Drawing.Size(487, 34);
-            this.mfcControl7.TabIndex = 40;
-            // 
-            // mfcControl4
-            // 
-            this.mfcControl4.Location = new System.Drawing.Point(3, 123);
-            this.mfcControl4.Name = "mfcControl4";
-            this.mfcControl4.Size = new System.Drawing.Size(487, 34);
-            this.mfcControl4.TabIndex = 35;
-            // 
-            // mfcControl1
-            // 
-            this.mfcControl1.Location = new System.Drawing.Point(3, 3);
-            this.mfcControl1.Name = "mfcControl1";
-            this.mfcControl1.Size = new System.Drawing.Size(490, 34);
-            this.mfcControl1.TabIndex = 36;
-            // 
-            // mfcControl2
-            // 
-            this.mfcControl2.Location = new System.Drawing.Point(3, 43);
-            this.mfcControl2.Name = "mfcControl2";
-            this.mfcControl2.Size = new System.Drawing.Size(490, 31);
-            this.mfcControl2.TabIndex = 37;
-            // 
-            // mfcControl3
-            // 
-            this.mfcControl3.Location = new System.Drawing.Point(3, 83);
-            this.mfcControl3.Name = "mfcControl3";
-            this.mfcControl3.Size = new System.Drawing.Size(490, 33);
-            this.mfcControl3.TabIndex = 38;
-            // 
-            // mfcControl5
-            // 
-            this.mfcControl5.Location = new System.Drawing.Point(3, 163);
-            this.mfcControl5.Name = "mfcControl5";
-            this.mfcControl5.Size = new System.Drawing.Size(487, 34);
-            this.mfcControl5.TabIndex = 39;
-            // 
-            // mfcControl6
-            // 
-            this.mfcControl6.Location = new System.Drawing.Point(3, 203);
-            this.mfcControl6.Name = "mfcControl6";
-            this.mfcControl6.Size = new System.Drawing.Size(487, 34);
-            this.mfcControl6.TabIndex = 40;
             // 
             // mfcMainControlEnable
             // 
@@ -351,6 +295,13 @@
             this.panel2.Size = new System.Drawing.Size(565, 393);
             this.panel2.TabIndex = 38;
             // 
+            // furnaceControl1
+            // 
+            this.furnaceControl1.Location = new System.Drawing.Point(604, 576);
+            this.furnaceControl1.Name = "furnaceControl1";
+            this.furnaceControl1.Size = new System.Drawing.Size(317, 149);
+            this.furnaceControl1.TabIndex = 42;
+            // 
             // gateSweepControl1
             // 
             this.gateSweepControl1.Location = new System.Drawing.Point(674, 615);
@@ -397,12 +348,61 @@
             this.mfcRecipeControl1.Size = new System.Drawing.Size(309, 277);
             this.mfcRecipeControl1.TabIndex = 25;
             // 
-            // furnaceControl1
+            // mfcControl8
             // 
-            this.furnaceControl1.Location = new System.Drawing.Point(604, 576);
-            this.furnaceControl1.Name = "furnaceControl1";
-            this.furnaceControl1.Size = new System.Drawing.Size(317, 116);
-            this.furnaceControl1.TabIndex = 42;
+            this.mfcControl8.Location = new System.Drawing.Point(3, 283);
+            this.mfcControl8.Name = "mfcControl8";
+            this.mfcControl8.Size = new System.Drawing.Size(487, 34);
+            this.mfcControl8.TabIndex = 41;
+            // 
+            // mfcControl7
+            // 
+            this.mfcControl7.Location = new System.Drawing.Point(3, 243);
+            this.mfcControl7.Name = "mfcControl7";
+            this.mfcControl7.Size = new System.Drawing.Size(487, 34);
+            this.mfcControl7.TabIndex = 40;
+            // 
+            // mfcControl4
+            // 
+            this.mfcControl4.Location = new System.Drawing.Point(3, 123);
+            this.mfcControl4.Name = "mfcControl4";
+            this.mfcControl4.Size = new System.Drawing.Size(487, 34);
+            this.mfcControl4.TabIndex = 35;
+            // 
+            // mfcControl1
+            // 
+            this.mfcControl1.Location = new System.Drawing.Point(3, 3);
+            this.mfcControl1.Name = "mfcControl1";
+            this.mfcControl1.Size = new System.Drawing.Size(490, 34);
+            this.mfcControl1.TabIndex = 36;
+            // 
+            // mfcControl2
+            // 
+            this.mfcControl2.Location = new System.Drawing.Point(3, 43);
+            this.mfcControl2.Name = "mfcControl2";
+            this.mfcControl2.Size = new System.Drawing.Size(490, 31);
+            this.mfcControl2.TabIndex = 37;
+            // 
+            // mfcControl3
+            // 
+            this.mfcControl3.Location = new System.Drawing.Point(3, 83);
+            this.mfcControl3.Name = "mfcControl3";
+            this.mfcControl3.Size = new System.Drawing.Size(490, 33);
+            this.mfcControl3.TabIndex = 38;
+            // 
+            // mfcControl5
+            // 
+            this.mfcControl5.Location = new System.Drawing.Point(3, 163);
+            this.mfcControl5.Name = "mfcControl5";
+            this.mfcControl5.Size = new System.Drawing.Size(487, 34);
+            this.mfcControl5.TabIndex = 39;
+            // 
+            // mfcControl6
+            // 
+            this.mfcControl6.Location = new System.Drawing.Point(3, 203);
+            this.mfcControl6.Name = "mfcControl6";
+            this.mfcControl6.Size = new System.Drawing.Size(487, 34);
+            this.mfcControl6.TabIndex = 40;
             // 
             // Form1
             // 

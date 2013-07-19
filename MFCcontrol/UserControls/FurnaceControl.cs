@@ -15,7 +15,10 @@ namespace MFCcontrol
     {
         internal SerialPort port;
         internal Form1 parentForm;
-        
+        internal int presTemp;
+        internal bool controlFurnaceInRecipe;
+        internal bool controlFurnace;
+
         public FurnaceControl()
         {
             InitializeComponent();
@@ -23,12 +26,23 @@ namespace MFCcontrol
 
         private void onButton_Click(object sender, EventArgs e)
         {
-            port.Write((char)2 + "01010WWRD0121,01,0001" + (char)3 + '\r');
+            turnOnHeater();
+        }
 
+        internal void turnOnHeater()
+        {
+            port.Write((char)2 + "01010WWRD0121,01,0001" + (char)3 + '\r');
+        }
+
+        internal void turnOffHeater()
+        {
+            port.Write((char)2 + "01010WWRD0121,01,0000" + (char)3 + '\r');
         }
 
         private void FurnaceControl_Load(object sender, EventArgs e)
         {
+            DisableUserControl();
+            
             if (Properties.Settings.Default.FurnaceControlEnable == true)
                 furnaceControlCheckBox.Checked = true;
 
@@ -36,7 +50,7 @@ namespace MFCcontrol
 
         private void offButton_Click(object sender, EventArgs e)
         {
-            port.Write((char)2 + "01010WWRD0121,01,0000" + (char)3 + '\r');
+            turnOffHeater();
 
         }
 
@@ -45,24 +59,10 @@ namespace MFCcontrol
             ///set start sp amount, to 200
             // \x0201010WWRD0228,01,00C8\x03
 
-            try
-            {
-                port.Write((char)2 + "01010WWRD0228,01," + Convert.ToInt32(setTempUpDown1.Value).ToString("X4") + (char)3 + '\r');
+            int newTemp = Convert.ToInt32(setTempUpDown1.Value);
 
-                //            set temperature to 200
-                //\x0201010WWRD0229,01,00C8\x03
-                port.Write((char)2 + "01010WWRD0229,01," + Convert.ToInt32(setTempUpDown1.Value).ToString("X4") + (char)3 + '\r');
+            UpdateSetTemperature(newTemp);
 
-                //            set sp1 time (minutes), 68 hr
-                //\x0201010WWRD0230,01,0FFF\x03
-                port.Write((char)2 + "01010WWRD0229,01,0FFF" + (char)3 + '\r');
-            }
-            catch
-            {
-                string messageBoxText = "Problem Sending Commands to Furnace";
-                string caption = "COM1 Problem";
-                var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
-            }
 
         }
 
@@ -87,6 +87,9 @@ namespace MFCcontrol
             {
                 inTemp = "timeout";
             }
+
+            presTemp = Convert.ToInt32(inTemp);
+
             return inTemp;
 
         }
@@ -96,6 +99,7 @@ namespace MFCcontrol
             onButton.Enabled = false;
             offButton.Enabled = false;
             setTempUpDown1.Enabled = false;
+            //furnaceControlCheckBox.Enabled = false;
 
         }
 
@@ -104,9 +108,32 @@ namespace MFCcontrol
             onButton.Enabled = true;
             offButton.Enabled = true;
             setTempUpDown1.Enabled = true;
+            //furnaceControlCheckBox.Enabled = true;
 
         }
 
+        internal void UpdateSetTemperature(int newTemp)
+        {
+            try
+            {
+                port.Write((char)2 + "01010WWRD0228,01," + newTemp.ToString("X4") + (char)3 + '\r');
+
+                //            set temperature to 200
+                //\x0201010WWRD0229,01,00C8\x03
+                port.Write((char)2 + "01010WWRD0229,01," + newTemp.ToString("X4") + (char)3 + '\r');
+
+                //            set sp1 time (minutes), 68 hr
+                //\x0201010WWRD0230,01,0FFF\x03
+                port.Write((char)2 + "01010WWRD0229,01,0FFF" + (char)3 + '\r');
+            }
+            catch
+            {
+                string messageBoxText = "Problem Sending Commands to Furnace";
+                string caption = "COM1 Problem";
+                var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            lastSetTempBox.Text = newTemp.ToString();
+        }
 
         private void furnaceControlCheckBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -129,22 +156,19 @@ namespace MFCcontrol
                         Environment.Exit(0);
                     }
                 }
-                onButton.Enabled = true;
-                offButton.Enabled = true;
-                setTempUpDown1.Enabled = true;
+                EnableUserControl();
                 parentForm.timerFurnaceTemp.StartTimer();
 
+                controlFurnace = true;
                 Properties.Settings.Default.FurnaceControlEnable = true;
             }
             else
             {
                 parentForm.timerFurnaceTemp.StopTimer();
                 port.Close();
-                onButton.Enabled = false;
-                offButton.Enabled = false;
-                setTempUpDown1.Enabled = false;
+                DisableUserControl();
 
-
+                controlFurnace = false;
                 Properties.Settings.Default.FurnaceControlEnable = false;
 
             }

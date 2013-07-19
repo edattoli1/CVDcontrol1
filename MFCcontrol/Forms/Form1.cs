@@ -24,6 +24,7 @@ namespace MFCcontrol
         //private HiResTimer timerADacquire;
         internal GenTimer timerADacquire;
         internal GenTimer timerADoutUpdate;
+        //internal GenTimer timerFurnaceOutUpdate;
         internal StreamWriter swriter;
 
         internal List<string[]> ADoutTableValues_s;
@@ -332,6 +333,10 @@ namespace MFCcontrol
                         digitalOutputControl1.UpdateDigOutput(i, false);
                 }
 
+                // Check whether changes are being made to Furnace Temperature states, if so communicate out the new temperature
+                if (FurnaceTempList_i[curRow_ADoutTable] > 0)
+                    furnaceControl1.UpdateSetTemperature(curRow_ADoutTable);
+
                 curRow_ADoutTable++;
                 timerADoutUpdate.StopTimer();
 
@@ -475,7 +480,7 @@ namespace MFCcontrol
 
 
             // Don't worry about saving AD data in or plotting it if recipe not runnin
-            if (recipeRunning != true)
+            if (recipeRunning == false)
             {
                 UpdateADacquireBusy = false;
                 return;
@@ -505,6 +510,10 @@ namespace MFCcontrol
                     //numActiveMFCs++;
                     await swriter.WriteAsync(string.Format("\t{0:F6}", DaqAction.GetMFCflowFromVolts(currentADin[i], i, maxFlowMFCs, fudgeFactorsMFCs)));
                 }
+
+                if (furnaceControl1.controlFurnaceInRecipe == true)
+                    await swriter.WriteAsync(string.Format("\t{0:F3}", furnaceControl1.presTemp));
+
             }
 
             await swriter.WriteAsync(Environment.NewLine);

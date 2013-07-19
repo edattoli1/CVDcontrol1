@@ -102,9 +102,10 @@ C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\ob
 C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Debug\MFCcontrol.csprojResolveAssemblyReference.cache
 C:\Users\Eric\Documents\Visual Studio 2012\Projects\SensorControlX\MFCcontrol\obj\Debug\MFCcontrol.UserControls.GateSweepControl.resources
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Debug\SensorControl.exe.config
-C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\SensorControl.exe
-C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\SensorControl.pdb
-C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.csprojResolveAssemblyReference.cache
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Debug\SensorControl.exe.manifest
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Debug\SensorControl.application
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Debug\SensorControl.exe
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Debug\SensorControl.pdb
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.DigitalOutLineStatesForm.resources
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.ConfigureDigitalOut.resources
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.ConfigureSwitchMatrix.resources
@@ -115,6 +116,7 @@ C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.Ke648
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.ScanDeviceCurrentsForm.resources
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.SwitchStateForm.resources
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.ScanListView.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.FurnaceControl.resources
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.DigitalOutputControl.resources
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.UserControls.GateSweepControl.resources
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.SwitchMatrixControl.resources
@@ -126,10 +128,8 @@ C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.Recip
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.SensorBiasControl.resources
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.ViewPresentCurrentsForm.resources
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.csproj.GenerateResource.Cache
-C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Debug\SensorControl.exe.manifest
-C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Debug\SensorControl.application
-C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Debug\SensorControl.exe
-C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\bin\Debug\SensorControl.pdb
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\SensorControl.exe.manifest
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\SensorControl.application
-C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.FurnaceControl.resources
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\SensorControl.exe
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\SensorControl.pdb
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.csprojResolveAssemblyReference.cache

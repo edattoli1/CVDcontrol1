@@ -141,11 +141,11 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.01739F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 10);
+            this.label11.Location = new System.Drawing.Point(1, 8);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(216, 20);
+            this.label11.Size = new System.Drawing.Size(291, 20);
             this.label11.TabIndex = 16;
-            this.label11.Text = "MFC RECIPE CONTROL";
+            this.label11.Text = "MFC && OVEN RECIPE CONTROL";
             // 
             // startButton
             // 
