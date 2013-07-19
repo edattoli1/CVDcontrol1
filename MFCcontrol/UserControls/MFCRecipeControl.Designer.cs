@@ -143,9 +143,9 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.01739F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(1, 8);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(291, 20);
+            this.label11.Size = new System.Drawing.Size(279, 20);
             this.label11.TabIndex = 16;
-            this.label11.Text = "MFC && OVEN RECIPE CONTROL";
+            this.label11.Text = "MFC&&OVEN RECIPE CONTROL";
             // 
             // startButton
             // 

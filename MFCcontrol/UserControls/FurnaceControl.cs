@@ -82,13 +82,15 @@ namespace MFCcontrol
                  
 
                 inTemp = port.ReadTo("\r");
+                if ((inTemp.Length >= 10) && parentForm.HasHexNumber(inTemp))
+                    presTemp = Convert.ToInt32(inTemp.Substring(7, 4), 16);
             }
             catch
             {
                 inTemp = "timeout";
             }
 
-            presTemp = Convert.ToInt32(inTemp);
+            
 
             return inTemp;
 

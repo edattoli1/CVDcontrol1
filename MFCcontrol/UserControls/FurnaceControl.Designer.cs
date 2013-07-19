@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lastSetTempBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.furnaceControlCheckBox = new System.Windows.Forms.CheckBox();
             this.presTempBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,8 +39,6 @@
             this.offButton = new System.Windows.Forms.Button();
             this.onButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lastSetTempBox = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.setTempUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,24 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(309, 143);
             this.panel3.TabIndex = 43;
+            // 
+            // lastSetTempBox
+            // 
+            this.lastSetTempBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lastSetTempBox.Location = new System.Drawing.Point(204, 72);
+            this.lastSetTempBox.Name = "lastSetTempBox";
+            this.lastSetTempBox.ReadOnly = true;
+            this.lastSetTempBox.Size = new System.Drawing.Size(87, 22);
+            this.lastSetTempBox.TabIndex = 50;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(95, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 17);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "Last Set Temp.";
             // 
             // furnaceControlCheckBox
             // 
@@ -139,27 +157,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 18);
+            this.label1.Size = new System.Drawing.Size(140, 18);
             this.label1.TabIndex = 13;
-            this.label1.Text = "FURNACE CONTROL";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(95, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 17);
-            this.label2.TabIndex = 49;
-            this.label2.Text = "Last Set Temp.";
-            // 
-            // lastSetTempBox
-            // 
-            this.lastSetTempBox.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.lastSetTempBox.Location = new System.Drawing.Point(204, 72);
-            this.lastSetTempBox.Name = "lastSetTempBox";
-            this.lastSetTempBox.ReadOnly = true;
-            this.lastSetTempBox.Size = new System.Drawing.Size(87, 22);
-            this.lastSetTempBox.TabIndex = 50;
+            this.label1.Text = "OVEN CONTROL";
             // 
             // FurnaceControl
             // 

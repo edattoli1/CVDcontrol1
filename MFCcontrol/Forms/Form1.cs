@@ -410,7 +410,7 @@ namespace MFCcontrol
 
         }
 
-        private bool HasHexNumber(string inputTemp)
+        internal bool HasHexNumber(string inputTemp)
         {
             
             for (int i = 7; i <= 10; i++)
