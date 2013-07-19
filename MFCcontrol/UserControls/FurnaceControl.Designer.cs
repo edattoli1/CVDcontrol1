@@ -39,6 +39,8 @@
             this.offButton = new System.Windows.Forms.Button();
             this.onButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.heaterStateBox = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.setTempUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +48,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.heaterStateBox);
+            this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.lastSetTempBox);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.furnaceControlCheckBox);
@@ -161,6 +165,24 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "OVEN CONTROL";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(5, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 17);
+            this.label5.TabIndex = 51;
+            this.label5.Text = "STATE:";
+            // 
+            // heaterStateBox
+            // 
+            this.heaterStateBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.heaterStateBox.Location = new System.Drawing.Point(62, 110);
+            this.heaterStateBox.Name = "heaterStateBox";
+            this.heaterStateBox.ReadOnly = true;
+            this.heaterStateBox.Size = new System.Drawing.Size(40, 22);
+            this.heaterStateBox.TabIndex = 52;
+            // 
             // FurnaceControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,5 +211,7 @@
         internal System.Windows.Forms.CheckBox furnaceControlCheckBox;
         private System.Windows.Forms.Label label2;
         internal System.Windows.Forms.TextBox lastSetTempBox;
+        private System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.TextBox heaterStateBox;
     }
 }

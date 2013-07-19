@@ -345,7 +345,7 @@
             // 
             this.mfcRecipeControl1.Location = new System.Drawing.Point(605, 332);
             this.mfcRecipeControl1.Name = "mfcRecipeControl1";
-            this.mfcRecipeControl1.Size = new System.Drawing.Size(309, 277);
+            this.mfcRecipeControl1.Size = new System.Drawing.Size(324, 277);
             this.mfcRecipeControl1.TabIndex = 25;
             // 
             // mfcControl8
@@ -408,7 +408,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 731);
+            this.ClientSize = new System.Drawing.Size(933, 731);
             this.Controls.Add(this.furnaceControl1);
             this.Controls.Add(this.gateSweepControl1);
             this.Controls.Add(this.panel5);

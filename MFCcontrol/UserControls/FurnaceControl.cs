@@ -32,11 +32,13 @@ namespace MFCcontrol
         internal void turnOnHeater()
         {
             port.Write((char)2 + "01010WWRD0121,01,0001" + (char)3 + '\r');
+            heaterStateBox.Text = "ON";
         }
 
         internal void turnOffHeater()
         {
             port.Write((char)2 + "01010WWRD0121,01,0000" + (char)3 + '\r');
+            heaterStateBox.Text = "OFF";
         }
 
         private void FurnaceControl_Load(object sender, EventArgs e)

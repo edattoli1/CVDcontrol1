@@ -60,7 +60,7 @@
             this.panel2.Controls.Add(this.loadFlowsButton);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(292, 231);
+            this.panel2.Size = new System.Drawing.Size(316, 230);
             this.panel2.TabIndex = 18;
             // 
             // viewPresentCurrentsButton
@@ -189,7 +189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Name = "MfcRecipeControl";
-            this.Size = new System.Drawing.Size(302, 236);
+            this.Size = new System.Drawing.Size(331, 236);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
