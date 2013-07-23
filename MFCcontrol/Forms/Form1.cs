@@ -80,6 +80,8 @@ namespace MFCcontrol
 
         internal int pointsPlotted = 0;
 
+        internal int lastGoodFurnaceTemp = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -268,6 +270,14 @@ namespace MFCcontrol
                 }
             }
 
+            // Update Heater Temperature
+
+            if (furnaceControl1.presTemp > 0)
+                furnaceControl1.presTempBox.Text = furnaceControl1.presTemp.ToString();
+            else
+                furnaceControl1.presTempBox.Text = "Read Error";
+
+
             if (recipeRunning == true)
             {
 
@@ -390,21 +400,15 @@ namespace MFCcontrol
         {
             UpdateFurnaceTempBusy = true;
 
-            if (InvokeRequired)
-            {
-                BeginInvoke((Action)UpdateFurnaceTemp);
-                return;
-            }
+            //if (InvokeRequired)
+            //{
+            //    BeginInvoke((Action)UpdateFurnaceTemp);
+            //    return;
+            //}
 
             string presentTemp = furnaceControl1.UpdatePresTemperature();
 
             // temperature is contained in 7th to 10th characters, convert from hex
-
-
-            if ((presentTemp.Length >= 10) && HasHexNumber(presentTemp))
-                furnaceControl1.presTempBox.Text = Convert.ToInt32(presentTemp.Substring(7, 4), 16).ToString();
-            else
-                furnaceControl1.presTempBox.Text = "Read Error";
 
 
             UpdateFurnaceTempBusy = false;
@@ -509,11 +513,22 @@ namespace MFCcontrol
                 if (stateMFCs[i] == true)
                 {
                     //numActiveMFCs++;
-                    await swriter.WriteAsync(string.Format("\t{0:F6}", DaqAction.GetMFCflowFromVolts(currentADin[i], i, maxFlowMFCs, fudgeFactorsMFCs)));
+                    await swriter.WriteAsync(string.Format("\t{0:F2}", DaqAction.GetMFCflowFromVolts(currentADin[i], i, maxFlowMFCs, fudgeFactorsMFCs)));
                 }
 
-                if (furnaceControl1.controlFurnaceInRecipe == true)
-                    await swriter.WriteAsync(string.Format("\t{0:F3}", furnaceControl1.presTemp));
+            }
+
+            if (furnaceControl1.controlFurnaceInRecipe == true)
+            {
+                int furnaceTempIn = furnaceControl1.presTemp;
+
+                if (furnaceTempIn >= 0)
+                {
+                    lastGoodFurnaceTemp = furnaceTempIn;
+                    await swriter.WriteAsync(string.Format("\t{0}", furnaceTempIn));
+                }
+                else
+                    await swriter.WriteAsync(string.Format("\t{0}", lastGoodFurnaceTemp));
 
             }
 

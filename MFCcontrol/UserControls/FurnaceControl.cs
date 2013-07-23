@@ -65,7 +65,10 @@ namespace MFCcontrol
         {
             // don't check temperature if furnace control is turned off
 
-            
+            if (furnaceControlCheckBox.Checked == false)
+                return "Comm. OFF";
+
+
             //\x0201010WRDD002,01\03 
             string inTemp;
             port.Write((char)2 + "01010WRDD0002,01" + (char)3 + '\r');
@@ -79,13 +82,13 @@ namespace MFCcontrol
                 inTemp = port.ReadTo("\r");
                 if ((inTemp.Length >= 10) && parentForm.HasHexNumber(inTemp))
                     presTemp = Convert.ToInt32(inTemp.Substring(7, 4), 16);
+                else
+                    presTemp = -1;
             }
             catch
             {
                 inTemp = "timeout";
             }
-
-            
 
             return inTemp;
 
@@ -159,6 +162,7 @@ namespace MFCcontrol
         {
             manFurnaceControlForm1 = new ManualFurnaceControlForm();
             manFurnaceControlForm1.parentForm = this;
+            manFurnaceControlForm1.Show();
         }
 
         private void uploadFurnaceTempProfileButton_Click(object sender, EventArgs e)
@@ -170,6 +174,9 @@ namespace MFCcontrol
             int [] actualFurnaceSPs = new int[17];
             int [] actualFurnaceTMs = new int [17];
             int numOfSPs = 0;
+
+            //turnOffHeater();
+
 
 
             // Create new arrays which contain actual heater temp. change events
