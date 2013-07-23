@@ -56,6 +56,34 @@ namespace MFCcontrol
 
         }
 
+
+        public int LoadFurnaceSSP(string fileName)
+        {
+            using (SpreadsheetDocument document = SpreadsheetDocument.Open(fileName, false))
+            {
+                WorkbookPart wbPart = document.WorkbookPart;
+
+                // Find the sheet with the supplied name, and then use that Sheet object
+                // to retrieve a reference to the appropriate worksheet.
+                Sheet theSheet = wbPart.Workbook.Descendants<Sheet>().
+                  Where(s => s.Name == sheetName).FirstOrDefault();
+
+                if (theSheet == null)
+                {
+                    throw new ArgumentException("sheetName");
+                }
+
+                // Retrieve a reference to the worksheet part, and then use its Worksheet property to get 
+                // a reference to the cell whose address matches the address you've supplied:
+                WorksheetPart wsPart = (WorksheetPart)(wbPart.GetPartById(theSheet.Id));
+
+                return Convert.ToInt32(XLGetCellValue(wsPart, "J2"));
+
+
+            }
+
+        }
+
         public bool LoadFurnaceControlState(string fileName)
         {
 
@@ -77,7 +105,7 @@ namespace MFCcontrol
                 // a reference to the cell whose address matches the address you've supplied:
                 WorksheetPart wsPart = (WorksheetPart)(wbPart.GetPartById(theSheet.Id));
 
-                int furnaceControlBoxValue = Convert.ToInt32(XLGetCellValue(wsPart, "R1"));
+                int furnaceControlBoxValue = Convert.ToInt32(XLGetCellValue(wsPart, "J1"));
 
                 if (furnaceControlBoxValue > 0)
                     return true;
@@ -301,7 +329,7 @@ namespace MFCcontrol
             string[] returnList = new string[numCols];
             int returnListIterator = 0;
 
-            for (char c = 'J'; c <= 'Q'; c++)
+            for (char c = 'K'; c <= 'R'; c++)
             {
                 returnList[returnListIterator] = XLGetCellValue(wsPart, c + sSheetRowNum);
                 returnListIterator++;
@@ -313,10 +341,10 @@ namespace MFCcontrol
         public static string XLGetRowTemperatures(int numCols, string sSheetRowNum, WorksheetPart wsPart)
         {
             string returnString;
-            int returnListIterator = 0;
+            //int returnListIterator = 0;
 
 
-            returnString = XLGetCellValue(wsPart, 'R' + sSheetRowNum);
+            returnString = XLGetCellValue(wsPart, 'J' + sSheetRowNum);
 
 
             return returnString;

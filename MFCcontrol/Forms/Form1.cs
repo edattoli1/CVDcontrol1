@@ -334,8 +334,8 @@ namespace MFCcontrol
                 }
 
                 // Check whether changes are being made to Furnace Temperature states, if so communicate out the new temperature
-                if (FurnaceTempList_i[curRow_ADoutTable] > 0)
-                    furnaceControl1.UpdateSetTemperature(curRow_ADoutTable);
+                //if (FurnaceTempList_i[curRow_ADoutTable] > 0)
+                //    furnaceControl1.UpdateSetTemperature(curRow_ADoutTable);
 
                 curRow_ADoutTable++;
                 timerADoutUpdate.StopTimer();
@@ -374,6 +374,7 @@ namespace MFCcontrol
 
         }
 
+        // Functions for updating present Furnace temperature on display form
 
         private void UpdateFurnaceTempHandler(object obj, EventArgs e)
         {
@@ -400,7 +401,7 @@ namespace MFCcontrol
             // temperature is contained in 7th to 10th characters, convert from hex
 
 
-            if ( (presentTemp.Length >= 10) && HasHexNumber(presentTemp) )
+            if ((presentTemp.Length >= 10) && HasHexNumber(presentTemp))
                 furnaceControl1.presTempBox.Text = Convert.ToInt32(presentTemp.Substring(7, 4), 16).ToString();
             else
                 furnaceControl1.presTempBox.Text = "Read Error";
@@ -412,10 +413,10 @@ namespace MFCcontrol
 
         internal bool HasHexNumber(string inputTemp)
         {
-            
+
             for (int i = 7; i <= 10; i++)
             {
-                if ( ((inputTemp[i] >= '0') && (inputTemp[i] <= '9')) || ( (inputTemp[i] >= 'A') && (inputTemp[i] <= 'F') ) )
+                if (((inputTemp[i] >= '0') && (inputTemp[i] <= '9')) || ((inputTemp[i] >= 'A') && (inputTemp[i] <= 'F')))
                     break;
                 else
                     return false;

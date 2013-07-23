@@ -29,34 +29,29 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lastSetTempBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.heaterStateBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.furnaceControlCheckBox = new System.Windows.Forms.CheckBox();
             this.presTempBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.setTempUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.offButton = new System.Windows.Forms.Button();
             this.onButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.heaterStateBox = new System.Windows.Forms.TextBox();
+            this.manualFurnaceControlButton = new System.Windows.Forms.Button();
+            this.uploadFurnaceTempProfileButton = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.setTempUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.uploadFurnaceTempProfileButton);
+            this.panel3.Controls.Add(this.manualFurnaceControlButton);
             this.panel3.Controls.Add(this.heaterStateBox);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.lastSetTempBox);
-            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.furnaceControlCheckBox);
             this.panel3.Controls.Add(this.presTempBox);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.setTempUpDown1);
             this.panel3.Controls.Add(this.offButton);
             this.panel3.Controls.Add(this.onButton);
             this.panel3.Controls.Add(this.label1);
@@ -65,23 +60,23 @@
             this.panel3.Size = new System.Drawing.Size(309, 143);
             this.panel3.TabIndex = 43;
             // 
-            // lastSetTempBox
+            // heaterStateBox
             // 
-            this.lastSetTempBox.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.lastSetTempBox.Location = new System.Drawing.Point(204, 72);
-            this.lastSetTempBox.Name = "lastSetTempBox";
-            this.lastSetTempBox.ReadOnly = true;
-            this.lastSetTempBox.Size = new System.Drawing.Size(87, 22);
-            this.lastSetTempBox.TabIndex = 50;
+            this.heaterStateBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.heaterStateBox.Location = new System.Drawing.Point(62, 110);
+            this.heaterStateBox.Name = "heaterStateBox";
+            this.heaterStateBox.ReadOnly = true;
+            this.heaterStateBox.Size = new System.Drawing.Size(40, 22);
+            this.heaterStateBox.TabIndex = 52;
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(95, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 17);
-            this.label2.TabIndex = 49;
-            this.label2.Text = "Last Set Temp.";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(5, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 17);
+            this.label5.TabIndex = 51;
+            this.label5.Text = "STATE:";
             // 
             // furnaceControlCheckBox
             // 
@@ -111,28 +106,6 @@
             this.label4.Size = new System.Drawing.Size(85, 17);
             this.label4.TabIndex = 47;
             this.label4.Text = "Pres. Temp.";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(126, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
-            this.label3.TabIndex = 46;
-            this.label3.Text = "Set Temp.";
-            // 
-            // setTempUpDown1
-            // 
-            this.setTempUpDown1.Location = new System.Drawing.Point(205, 40);
-            this.setTempUpDown1.Maximum = new decimal(new int[] {
-            1100,
-            0,
-            0,
-            0});
-            this.setTempUpDown1.Name = "setTempUpDown1";
-            this.setTempUpDown1.Size = new System.Drawing.Size(86, 22);
-            this.setTempUpDown1.TabIndex = 44;
-            this.setTempUpDown1.ValueChanged += new System.EventHandler(this.setTempUpDown1_ValueChanged);
             // 
             // offButton
             // 
@@ -165,23 +138,26 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "OVEN CONTROL";
             // 
-            // label5
+            // manualFurnaceControlButton
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 113);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 17);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "STATE:";
+            this.manualFurnaceControlButton.Location = new System.Drawing.Point(124, 73);
+            this.manualFurnaceControlButton.Name = "manualFurnaceControlButton";
+            this.manualFurnaceControlButton.Size = new System.Drawing.Size(75, 23);
+            this.manualFurnaceControlButton.TabIndex = 44;
+            this.manualFurnaceControlButton.Text = "Manual";
+            this.manualFurnaceControlButton.UseVisualStyleBackColor = true;
+            this.manualFurnaceControlButton.Click += new System.EventHandler(this.manualFurnaceControlButton_Click);
             // 
-            // heaterStateBox
+            // uploadFurnaceTempProfileButton
             // 
-            this.heaterStateBox.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.heaterStateBox.Location = new System.Drawing.Point(62, 110);
-            this.heaterStateBox.Name = "heaterStateBox";
-            this.heaterStateBox.ReadOnly = true;
-            this.heaterStateBox.Size = new System.Drawing.Size(40, 22);
-            this.heaterStateBox.TabIndex = 52;
+            this.uploadFurnaceTempProfileButton.Enabled = false;
+            this.uploadFurnaceTempProfileButton.Location = new System.Drawing.Point(124, 37);
+            this.uploadFurnaceTempProfileButton.Name = "uploadFurnaceTempProfileButton";
+            this.uploadFurnaceTempProfileButton.Size = new System.Drawing.Size(152, 28);
+            this.uploadFurnaceTempProfileButton.TabIndex = 53;
+            this.uploadFurnaceTempProfileButton.Text = "Upload Temp Profile";
+            this.uploadFurnaceTempProfileButton.UseVisualStyleBackColor = true;
+            this.uploadFurnaceTempProfileButton.Click += new System.EventHandler(this.uploadFurnaceTempProfileButton_Click);
             // 
             // FurnaceControl
             // 
@@ -193,7 +169,6 @@
             this.Load += new System.EventHandler(this.FurnaceControl_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.setTempUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,14 +179,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button offButton;
         private System.Windows.Forms.Button onButton;
-        private System.Windows.Forms.NumericUpDown setTempUpDown1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         internal System.Windows.Forms.TextBox presTempBox;
         internal System.Windows.Forms.CheckBox furnaceControlCheckBox;
-        private System.Windows.Forms.Label label2;
-        internal System.Windows.Forms.TextBox lastSetTempBox;
         private System.Windows.Forms.Label label5;
         internal System.Windows.Forms.TextBox heaterStateBox;
+        private System.Windows.Forms.Button manualFurnaceControlButton;
+        internal System.Windows.Forms.Button uploadFurnaceTempProfileButton;
     }
 }

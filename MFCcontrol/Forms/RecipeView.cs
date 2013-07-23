@@ -66,24 +66,26 @@ namespace MFCcontrol
             dataGridView1.Columns[7].Width = 65;
             dataGridView1.Columns[8].Name = "MFC8";
             dataGridView1.Columns[8].Width = 65;
-            dataGridView1.Columns[9].Name = "D1";
+            dataGridView1.Columns[9].Name = "Temp.";
             dataGridView1.Columns[9].Width = 50;
-            dataGridView1.Columns[10].Name = "D2";
+
+            dataGridView1.Columns[10].Name = "D1";
             dataGridView1.Columns[10].Width = 50;
-            dataGridView1.Columns[11].Name = "D3";
+            dataGridView1.Columns[11].Name = "D2";
             dataGridView1.Columns[11].Width = 50;
-            dataGridView1.Columns[12].Name = "D4";
+            dataGridView1.Columns[12].Name = "D3";
             dataGridView1.Columns[12].Width = 50;
-            dataGridView1.Columns[13].Name = "D5";
+            dataGridView1.Columns[13].Name = "D4";
             dataGridView1.Columns[13].Width = 50;
-            dataGridView1.Columns[14].Name = "D6";
+            dataGridView1.Columns[14].Name = "D5";
             dataGridView1.Columns[14].Width = 50;
-            dataGridView1.Columns[15].Name = "D7";
+            dataGridView1.Columns[15].Name = "D6";
             dataGridView1.Columns[15].Width = 50;
-            dataGridView1.Columns[16].Name = "D8";
+            dataGridView1.Columns[16].Name = "D7";
             dataGridView1.Columns[16].Width = 50;
-            dataGridView1.Columns[17].Name = "Temp.";
-            dataGridView1.Columns[16].Width = 50;
+            dataGridView1.Columns[17].Name = "D8";
+            dataGridView1.Columns[17].Width = 50;
+
 
 
             LoadValuesDataGridView(MfcTableList, DigOutTableList, FurnaceTempList);
@@ -102,8 +104,9 @@ namespace MFCcontrol
                 string[] curRow2 = inputList2_s.ElementAt(i);
                 string[] curRow = new string[curRow1.Length + curRow2.Length + 1];
                 Array.Copy(curRow1, curRow, curRow1.Length);
-                Array.Copy(curRow2, 0, curRow, curRow1.Length, curRow2.Length);
-                curRow[curRow1.Length + curRow2.Length] = inputList3_s.ElementAt(i);
+                curRow[curRow1.Length ] = inputList3_s.ElementAt(i);
+                Array.Copy(curRow2, 0, curRow, curRow1.Length+1, curRow2.Length);
+                
                 dataGridView1.Rows.Add(curRow);
             }
 

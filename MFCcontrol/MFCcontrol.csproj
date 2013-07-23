@@ -123,6 +123,12 @@
     <Compile Include="Forms\Ke648xGUI.Designer.cs">
       <DependentUpon>Ke648xGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManualFurnaceControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManualFurnaceControlForm.Designer.cs">
+      <DependentUpon>ManualFurnaceControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ScanDeviceCurrentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ke648xGUI.resx">
       <DependentUpon>Ke648xGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManualFurnaceControlForm.resx">
+      <DependentUpon>ManualFurnaceControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScanDeviceCurrentsForm.resx">
       <DependentUpon>ScanDeviceCurrentsForm.cs</DependentUpon>

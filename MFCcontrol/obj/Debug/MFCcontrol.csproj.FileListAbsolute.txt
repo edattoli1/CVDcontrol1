@@ -133,3 +133,4 @@ C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\SensorControl.ap
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\SensorControl.exe
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\SensorControl.pdb
 C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.csprojResolveAssemblyReference.cache
+C:\Users\eric\Documents\GitHub\CVDcontrol1\MFCcontrol\obj\Debug\MFCcontrol.ManualFurnaceControlForm.resources

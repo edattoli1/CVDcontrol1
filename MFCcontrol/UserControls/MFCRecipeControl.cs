@@ -160,9 +160,7 @@ namespace MFCcontrol
                 parentForm.furnaceControl1.furnaceControlCheckBox.Checked = true;
                 parentForm.furnaceControl1.turnOnHeater();
 
-                // Check whether there is an initial change to furnace temperature, if so update the value
-                if (parentForm.FurnaceTempList_i[parentForm.curRow_ADoutTable] > 0)
-                    parentForm.furnaceControl1.UpdateSetTemperature(parentForm.FurnaceTempList_i[parentForm.curRow_ADoutTable]);
+               
 
             }
 
@@ -223,7 +221,7 @@ namespace MFCcontrol
             //Disable Gate Bias Controls
             parentForm.gateSweepControl1.DisableUserControl();
 
-            // Disable Furance Control
+            // Disable Furnace Control
             parentForm.furnaceControl1.DisableUserControl();
 
 
@@ -249,6 +247,15 @@ namespace MFCcontrol
                 parentForm.stateMFCs = sshtLoad1.LoadMFCstate(this.openFileDialog1.FileName);
 
                 parentForm.furnaceControl1.controlFurnaceInRecipe = sshtLoad1.LoadFurnaceControlState(this.openFileDialog1.FileName);
+
+                parentForm.furnaceControl1.startSetPoint = sshtLoad1.LoadFurnaceSSP(this.openFileDialog1.FileName);
+
+
+                if ( (parentForm.furnaceControl1.controlFurnaceInRecipe == true) && (parentForm.furnaceControl1.furnaceControlCheckBox.Checked == true) )
+                    parentForm.furnaceControl1.uploadFurnaceTempProfileButton.Enabled = true;
+                else
+                    parentForm.furnaceControl1.uploadFurnaceTempProfileButton.Enabled = false;
+
 
                 parentForm.maxFlowMFCs = sshtLoad1.LoadMFCmaxFlows(this.openFileDialog1.FileName);
 
@@ -460,6 +467,9 @@ namespace MFCcontrol
             // Enable Gate Bias Control
             parentForm.gateSweepControl1.EnableUserControl();
 
+            //Turn off Furnace
+            // ?
+
             //Enable Furnace Control
             parentForm.furnaceControl1.EnableUserControl();
         }
@@ -468,7 +478,7 @@ namespace MFCcontrol
         {
             try
             {
-                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(path, FileMode.Open))
                 {
                     var test = fs.CanWrite;
                 }
