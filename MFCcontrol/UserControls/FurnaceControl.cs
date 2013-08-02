@@ -203,11 +203,17 @@ namespace MFCcontrol
                 
             
 
-            //Load SSP 
+            
 
             try
             {
+                //Load SSP 
                 port.Write((char)2 + "01010WWRD0228,01," + startSetPoint.ToString("X4") + (char)3 + '\r');
+
+                Thread.Sleep(50);
+
+                //make JC = 0 so furnace shuts down when recipe is over
+                port.Write((char)2 + "01010WWRD0261,01," + "0" + (char)3 + '\r');
 
                 Thread.Sleep(50);
             }
