@@ -213,7 +213,7 @@ namespace MFCcontrol
                 Thread.Sleep(50);
 
                 //make JC = 0 so furnace shuts down when recipe is over
-                port.Write((char)2 + "01010WWRD0261,01," + "0" + (char)3 + '\r');
+                port.Write((char)2 + "01010WWRD0261,01," + "0000" + (char)3 + '\r');
 
                 Thread.Sleep(50);
             }
@@ -243,6 +243,8 @@ namespace MFCcontrol
 
                         Thread.Sleep(50);
 
+                        //Advance to Next step
+                        // \x0201010WWRD0123,01,0001\x03
 
                         ////            set sp1 time (minutes), 68 hr
                         ////\x0201010WWRD0230,01,0FFF\x03
