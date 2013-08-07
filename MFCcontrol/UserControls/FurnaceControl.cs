@@ -22,6 +22,7 @@ namespace MFCcontrol
         internal ManualFurnaceControlForm manFurnaceControlForm1;
         internal int startSetPoint;
         internal volatile bool commBusy;
+        private static readonly object _lock = new object();
 
         public FurnaceControl()
         {
@@ -64,6 +65,7 @@ namespace MFCcontrol
 
         internal string UpdatePresTemperature()
         {
+
             if (commBusy == true)
             {
                 return "timeout";
@@ -74,30 +76,35 @@ namespace MFCcontrol
             if (furnaceControlCheckBox.Checked == false)
                 return "Comm. OFF";
 
-            commBusy = true;
-
-            //\x0201010WRDD002,01\03 
             string inTemp;
-            port.Write((char)2 + "01010WRDD0002,01" + (char)3 + '\r');
-            try
-            {
-                // alternative
-                 //                returnBytes = port.Read(inRead, 0, 11);
-                // inTemp = new string (inRead);
-                 
 
-                inTemp = port.ReadTo("\r");
-                if ((inTemp.Length >= 10) && parentForm.HasHexNumber(inTemp))
-                    presTemp = Convert.ToInt32(inTemp.Substring(7, 4), 16);
-                else
-                    presTemp = -1;
-            }
-            catch
+            lock (_lock)
             {
-                inTemp = "timeout";
-            }
 
-            commBusy = false;
+                commBusy = true;
+
+                //\x0201010WRDD002,01\03 
+                port.Write((char)2 + "01010WRDD0002,01" + (char)3 + '\r');
+                try
+                {
+                    // alternative
+                    //                returnBytes = port.Read(inRead, 0, 11);
+                    // inTemp = new string (inRead);
+
+
+                    inTemp = port.ReadTo("\r");
+                    if ((inTemp.Length >= 10) && parentForm.HasHexNumber(inTemp))
+                        presTemp = Convert.ToInt32(inTemp.Substring(7, 4), 16);
+                    else
+                        presTemp = -1;
+                }
+                catch
+                {
+                    inTemp = "timeout";
+                }
+
+                commBusy = false;
+            }
 
             return inTemp;
 
@@ -183,26 +190,29 @@ namespace MFCcontrol
                     Thread.Sleep(50);
             }
 
-            commBusy = true;
-
-            try
+            lock (_lock)
             {
-                //Advance to Next step
-                // \x0201010WWRD0123,01,0001\x03
 
-                port.Write((char)2 + "01010WWRD0123,01,0001"  + (char)3 + '\r');
+                commBusy = true;
 
-                Thread.Sleep(50);
+                try
+                {
+                    //Advance to Next step
+                    // \x0201010WWRD0123,01,0001\x03
+
+                    port.Write((char)2 + "01010WWRD0123,01,0001" + (char)3 + '\r');
+
+                    Thread.Sleep(50);
+                }
+                catch
+                {
+                    string messageBoxText = "Problem Sending Commands to Furnace";
+                    string caption = "COM1 Problem";
+                    var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+
+                commBusy = false;
             }
-            catch
-            {
-                string messageBoxText = "Problem Sending Commands to Furnace";
-                string caption = "COM1 Problem";
-                var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
-            }
-
-            commBusy = false;
-
         }
 
         private void uploadFurnaceTempProfileButton_Click(object sender, EventArgs e)
@@ -210,9 +220,9 @@ namespace MFCcontrol
 
             int[] nonZeroFurnaceSPs = new int[17];
             int[] nonZeroFurnaceSPtimestamps = new int[17];
-            
-            int [] actualFurnaceSPs = new int[17];
-            int [] actualFurnaceTMs = new int [17];
+
+            int[] actualFurnaceSPs = new int[17];
+            int[] actualFurnaceTMs = new int[17];
             int numOfSPs = 0;
 
             //turnOffHeater();
@@ -226,7 +236,7 @@ namespace MFCcontrol
                 if (parentForm.FurnaceTempList_i[i] >= 0)
                 {
                     nonZeroFurnaceSPs[numOfSPs] = parentForm.FurnaceTempList_i[i];
-                    nonZeroFurnaceSPtimestamps[numOfSPs+1] = Convert.ToInt32(parentForm.ADoutTableValues_d[i][0]);
+                    nonZeroFurnaceSPtimestamps[numOfSPs + 1] = Convert.ToInt32(parentForm.ADoutTableValues_d[i][0]);
                     numOfSPs++;
                 }
             }
@@ -235,10 +245,10 @@ namespace MFCcontrol
 
             for (int i = 0; i < numOfSPs; i++)
             {
-                    actualFurnaceSPs[i] = nonZeroFurnaceSPs[i];
+                actualFurnaceSPs[i] = nonZeroFurnaceSPs[i];
 
-                    //actualFurnaceTMs[i] = nonZeroFurnaceSPtimestamps[i+1] -nonZeroFurnaceSPtimestamps[i] ;
-                    
+                //actualFurnaceTMs[i] = nonZeroFurnaceSPtimestamps[i+1] -nonZeroFurnaceSPtimestamps[i] ;
+
                 // set maximum tm time
                 actualFurnaceTMs[i] = 4095;
             }
@@ -252,34 +262,36 @@ namespace MFCcontrol
                     Thread.Sleep(50);
             }
 
-            commBusy = true;
-
-            try
+            lock (_lock)
             {
-                //Load SSP 
-                port.Write((char)2 + "01010WWRD0228,01," + startSetPoint.ToString("X4") + (char)3 + '\r');
+                commBusy = true;
 
-                Thread.Sleep(50);
+                try
+                {
+                    //Load SSP 
+                    port.Write((char)2 + "01010WWRD0228,01," + startSetPoint.ToString("X4") + (char)3 + '\r');
 
-                //make JC = 0 so furnace shuts down when recipe is over
-                port.Write((char)2 + "01010WWRD0261,01," + "0000" + (char)3 + '\r');
+                    Thread.Sleep(50);
 
-                Thread.Sleep(50);
-            }
-            catch
-            {
-                string messageBoxText = "Problem Sending Commands to Furnace";
-                string caption = "COM1 Problem";
-                var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
-            }
+                    //make JC = 0 so furnace shuts down when recipe is over
+                    port.Write((char)2 + "01010WWRD0261,01," + "0000" + (char)3 + '\r');
 
-            //Load SP1, SP2, TM1, TM2
-            
+                    Thread.Sleep(50);
+                }
+                catch
+                {
+                    string messageBoxText = "Problem Sending Commands to Furnace";
+                    string caption = "COM1 Problem";
+                    var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
 
-            for (int i = 0; i < numOfSPs; i++)
-            {
-                string spName = (229 + i * 2 ).ToString();
-                string tmName = (230 + i * 2).ToString();
+                //Load SP1, SP2, TM1, TM2
+
+
+                for (int i = 0; i < numOfSPs; i++)
+                {
+                    string spName = (229 + i * 2).ToString();
+                    string tmName = (230 + i * 2).ToString();
                     try
                     {
                         port.Write((char)2 + "01010WWRD0" + spName + ",01," + actualFurnaceSPs[i].ToString("X4") + (char)3 + '\r');
@@ -297,8 +309,10 @@ namespace MFCcontrol
 
                         ////            set sp1 time (minutes), 68 hr
                         ////\x0201010WWRD0230,01,0FFF\x03
-                        port.Write((char)2 + "01010WWRD0"+ tmName + ",01,0FFF" + (char)3 + '\r');
-                        Thread.Sleep(50);
+                        port.Write((char)2 + "01010WWRD0" + tmName + ",01,0FFF" + (char)3 + '\r');
+                        Thread.Sleep(100);
+
+                        
 
                     }
                     catch
@@ -307,24 +321,22 @@ namespace MFCcontrol
                         string caption = "COM1 Problem";
                         var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
                     }
-                }
-
-                //Load Last SP, TM
-            string spName2 = (229 + numOfSPs*2).ToString();
-            string tmName2 = (230 + numOfSPs*2).ToString();        
 
 
+                    //Load Last SP, TM
+                    string spName2 = (229 + numOfSPs * 2).ToString();
+                    string tmName2 = (230 + numOfSPs * 2).ToString();
+                    
                     try
                     {
-                        port.Write((char)2 + "01010WWRD0" + spName2 +",01," + 0.ToString("X4") + (char)3 + '\r');
+                    port.Write((char)2 + "01010WWRD0" + spName2 + ",01," + 0.ToString("X4") + (char)3 + '\r');
 
-                        Thread.Sleep(50);
+                    Thread.Sleep(50);
 
-                        //            write -1 to furnace controller, TM, turns furnace off
-                        port.Write((char)2 + "01010WWRD0" + tmName2 +",01," + "FFFF" + (char)3 + '\r');
+                    //            write -1 to furnace controller, TM, turns furnace off
+                    port.Write((char)2 + "01010WWRD0" + tmName2 + ",01," + "FFFF" + (char)3 + '\r');
 
-                        Thread.Sleep(50);
-
+                    Thread.Sleep(50);
                     }
                     catch
                     {
@@ -333,8 +345,13 @@ namespace MFCcontrol
                         var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
                     }
 
-                    commBusy = false;
+
+                }
+
+
+                commBusy = false;
             }
+        }
         
     }
 }
