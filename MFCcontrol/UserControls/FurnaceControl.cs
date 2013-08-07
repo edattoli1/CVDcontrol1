@@ -21,7 +21,7 @@ namespace MFCcontrol
         internal bool controlFurnace;
         internal ManualFurnaceControlForm manFurnaceControlForm1;
         internal int startSetPoint;
-        internal bool commBusy;
+        internal volatile bool commBusy;
 
         public FurnaceControl()
         {
