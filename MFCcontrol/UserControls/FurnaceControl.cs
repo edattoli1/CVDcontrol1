@@ -165,6 +165,29 @@ namespace MFCcontrol
             manFurnaceControlForm1.Show();
         }
 
+
+        public void AdvanceRecipe()
+        {
+            try
+            {
+                //Advance to Next step
+                // \x0201010WWRD0123,01,0001\x03
+
+                port.Write((char)2 + "01010WWRD0123,01,0001"  + (char)3 + '\r');
+
+                Thread.Sleep(50);
+            }
+            catch
+            {
+                string messageBoxText = "Problem Sending Commands to Furnace";
+                string caption = "COM1 Problem";
+                var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+
+
+
+        }
+
         private void uploadFurnaceTempProfileButton_Click(object sender, EventArgs e)
         {
 
@@ -197,7 +220,10 @@ namespace MFCcontrol
             {
                     actualFurnaceSPs[i] = nonZeroFurnaceSPs[i];
 
-                    actualFurnaceTMs[i] = nonZeroFurnaceSPtimestamps[i+1] -nonZeroFurnaceSPtimestamps[i] ;
+                    //actualFurnaceTMs[i] = nonZeroFurnaceSPtimestamps[i+1] -nonZeroFurnaceSPtimestamps[i] ;
+                    
+                // set maximum tm time
+                actualFurnaceTMs[i] = 4095;
             }
             actualFurnaceTMs[numOfSPs] = -1;
                 

@@ -344,8 +344,8 @@ namespace MFCcontrol
                 }
 
                 // Check whether changes are being made to Furnace Temperature states, if so communicate out the new temperature
-                //if (FurnaceTempList_i[curRow_ADoutTable] > 0)
-                //    furnaceControl1.UpdateSetTemperature(curRow_ADoutTable);
+                if (FurnaceTempList_i[curRow_ADoutTable] >= -1)
+                    furnaceControl1.AdvanceRecipe();
 
                 curRow_ADoutTable++;
                 timerADoutUpdate.StopTimer();
