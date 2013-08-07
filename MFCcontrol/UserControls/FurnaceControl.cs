@@ -297,7 +297,7 @@ namespace MFCcontrol
 
                         ////            set sp1 time (minutes), 68 hr
                         ////\x0201010WWRD0230,01,0FFF\x03
-                        port.Write((char)2 + "01010WWRD0229,01,0FFF" + (char)3 + '\r');
+                        port.Write((char)2 + "01010WWRD0"+ tmName + ",01,0FFF" + (char)3 + '\r');
                         Thread.Sleep(50);
 
                     }
