@@ -338,7 +338,7 @@ namespace MFCcontrol
                 for (int i = 0; i < parentForm.ADoutTableValues_d.Count; i++)
                 {
                     if ((parentForm.FurnaceTempList_s[i] == "") || (parentForm.FurnaceTempList_s[i] == null))
-                        parentForm.FurnaceTempList_i.Add( -1 );
+                        parentForm.FurnaceTempList_i.Add( -2 );
                     else
                         parentForm.FurnaceTempList_i.Add ( Convert.ToInt32(parentForm.FurnaceTempList_s[i]) );
                 }

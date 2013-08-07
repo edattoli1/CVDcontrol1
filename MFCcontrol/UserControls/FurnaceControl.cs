@@ -21,6 +21,7 @@ namespace MFCcontrol
         internal bool controlFurnace;
         internal ManualFurnaceControlForm manFurnaceControlForm1;
         internal int startSetPoint;
+        internal bool commBusy;
 
         public FurnaceControl()
         {
@@ -63,11 +64,17 @@ namespace MFCcontrol
 
         internal string UpdatePresTemperature()
         {
+            if (commBusy == true)
+            {
+                return "timeout";
+            }
+            
             // don't check temperature if furnace control is turned off
 
             if (furnaceControlCheckBox.Checked == false)
                 return "Comm. OFF";
 
+            commBusy = true;
 
             //\x0201010WRDD002,01\03 
             string inTemp;
@@ -89,6 +96,8 @@ namespace MFCcontrol
             {
                 inTemp = "timeout";
             }
+
+            commBusy = false;
 
             return inTemp;
 
@@ -168,6 +177,14 @@ namespace MFCcontrol
 
         public void AdvanceRecipe()
         {
+            if (commBusy == true)
+            {
+                while (commBusy == true)
+                    Thread.Sleep(50);
+            }
+
+            commBusy = true;
+
             try
             {
                 //Advance to Next step
@@ -184,7 +201,7 @@ namespace MFCcontrol
                 var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
 
-
+            commBusy = false;
 
         }
 
@@ -226,10 +243,16 @@ namespace MFCcontrol
                 actualFurnaceTMs[i] = 4095;
             }
             actualFurnaceTMs[numOfSPs] = -1;
-                
-            
 
-            
+
+
+            if (commBusy == true)
+            {
+                while (commBusy == true)
+                    Thread.Sleep(50);
+            }
+
+            commBusy = true;
 
             try
             {
@@ -265,17 +288,17 @@ namespace MFCcontrol
 
                         //            set temperature to 200
                         //\x0201010WWRD0229,01,00C8\x03
-                        port.Write((char)2 + "01010WWRD0" + tmName + ",01," + actualFurnaceTMs[i].ToString("X4") + (char)3 + '\r');
+                        //port.Write((char)2 + "01010WWRD0" + tmName + ",01," + actualFurnaceTMs[i].ToString("X4") + (char)3 + '\r');
 
-                        Thread.Sleep(50);
+                        //Thread.Sleep(50);
 
                         //Advance to Next step
                         // \x0201010WWRD0123,01,0001\x03
 
                         ////            set sp1 time (minutes), 68 hr
                         ////\x0201010WWRD0230,01,0FFF\x03
-                        //port.Write((char)2 + "01010WWRD0229,01,0FFF" + (char)3 + '\r');
-                        //Thread.Sleep(50);
+                        port.Write((char)2 + "01010WWRD0229,01,0FFF" + (char)3 + '\r');
+                        Thread.Sleep(50);
 
                     }
                     catch
@@ -309,9 +332,9 @@ namespace MFCcontrol
                         string caption = "COM1 Problem";
                         var result = MessageBox.Show(messageBoxText, caption, MessageBoxButtons.OK, MessageBoxIcon.Question);
                     }
-                
 
+                    commBusy = false;
             }
-
+        
     }
 }

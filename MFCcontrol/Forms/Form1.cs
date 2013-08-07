@@ -344,6 +344,7 @@ namespace MFCcontrol
                 }
 
                 // Check whether changes are being made to Furnace Temperature states, if so communicate out the new temperature
+                // -1 is end recipe, more negative value is empty cell
                 if (FurnaceTempList_i[curRow_ADoutTable] >= -1)
                     furnaceControl1.AdvanceRecipe();
 
